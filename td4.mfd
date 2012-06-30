@@ -1,0 +1,1630 @@
+MDF Database:  version 1.0
+MDF_INFO | td4 | XC95144XL-5-TQ144
+MACROCELL | 0 | 2 | OUT_0_OBUF
+ATTRIBUTES | 8815426 | 0
+OUTPUTMC | 9 | 0 | 2 | 4 | 2 | 7 | 3 | 6 | 4 | 4 | 1 | 6 | 3 | 6 | 5 | 7 | 2 | 7 | 4
+INPUTS | 7 | OUT<0>  | MEM_DATA<7>  | MEM_DATA<6>  | MEM_DATA<0>  | MEM_DATA<5>  | regBOut<0>  | EXP10_.EXP
+INPUTMC | 3 | 0 | 2 | 7 | 17 | 0 | 1
+INPUTP | 4 | 9 | 103 | 28 | 49
+IMPORTS | 1 | 0 | 1
+EQ | 11 | 
+   OUT<0>.D = !OUT<0> & !MEM_DATA<7>
+	# !OUT<0> & MEM_DATA<6>
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<0> & 
+	MEM_DATA<0>
+	# MEM_DATA<7> & !MEM_DATA<6> & MEM_DATA<0> & 
+	MEM_DATA<5>
+;Imported pterms FB1_2
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<0> & 
+	!MEM_DATA<0> & !MEM_DATA<5>;
+   OUT<0>.CLK = CLK;	// GCK
+   OUT<0>.CE = MEM_DATA<7> & !MEM_DATA<6>;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 4 | 2 | OUT_1_OBUF
+ATTRIBUTES | 8815426 | 0
+OUTPUTMC | 7 | 4 | 2 | 7 | 2 | 6 | 4 | 4 | 1 | 6 | 3 | 6 | 5 | 7 | 4
+INPUTS | 10 | MEM_DATA<7>  | MEM_DATA<6>  | regBOut<0>  | regBOut<1>  | MEM_DATA<0>  | MEM_DATA<1>  | OUT<0>  | OUT<1>  | EXP35_.EXP  | EXP36_.EXP
+INPUTMC | 6 | 7 | 17 | 3 | 9 | 0 | 2 | 4 | 2 | 4 | 1 | 4 | 3
+INPUTP | 4 | 9 | 103 | 28 | 90
+IMPORTS | 2 | 4 | 1 | 4 | 3
+EQ | 22 | 
+   OUT<1>.D = OUT<0> & !OUT<1> & !MEM_DATA<7>
+	# !OUT<0> & OUT<1> & !MEM_DATA<7>
+	# !OUT<0> & OUT<1> & MEM_DATA<6>
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<0> & 
+	regBOut<1> & MEM_DATA<0> & MEM_DATA<1>
+;Imported pterms FB5_2
+	# OUT<0> & !OUT<1> & MEM_DATA<6>
+	# MEM_DATA<7> & !MEM_DATA<6> & MEM_DATA<1> & 
+	MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<0> & 
+	!regBOut<1> & MEM_DATA<1>
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<1> & 
+	!MEM_DATA<0> & MEM_DATA<1>
+;Imported pterms FB5_4
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<0> & 
+	regBOut<1> & !MEM_DATA<1> & !MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<1> & 
+	!MEM_DATA<0> & !MEM_DATA<1> & !MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<0> & 
+	!regBOut<1> & MEM_DATA<0> & !MEM_DATA<1> & !MEM_DATA<5>;
+   OUT<1>.CLK = CLK;	// GCK
+   OUT<1>.CE = MEM_DATA<7> & !MEM_DATA<6>;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 7 | 3 | OUT_2_OBUF
+ATTRIBUTES | 8815426 | 0
+OUTPUTMC | 5 | 7 | 3 | 6 | 3 | 6 | 5 | 7 | 2 | 7 | 4
+INPUTS | 12 | MEM_DATA<7>  | MEM_DATA<6>  | regBOut<0>  | regBOut<1>  | regBOut<2>  | MEM_DATA<0>  | MEM_DATA<2>  | MEM_DATA<1>  | OUT<0>  | OUT<2>  | EXP46_.EXP  | EXP47_.EXP
+INPUTMC | 7 | 7 | 17 | 3 | 9 | 7 | 15 | 0 | 2 | 7 | 3 | 7 | 2 | 7 | 4
+INPUTP | 5 | 9 | 103 | 28 | 145 | 90
+IMPORTS | 2 | 7 | 2 | 7 | 4
+EQ | 48 | 
+   OUT<2>.D = !OUT<0> & OUT<2> & !MEM_DATA<7>
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<1> & 
+	regBOut<2> & MEM_DATA<1> & MEM_DATA<2>
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<0> & 
+	regBOut<1> & regBOut<2> & MEM_DATA<0> & MEM_DATA<2>
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<0> & 
+	regBOut<2> & MEM_DATA<0> & MEM_DATA<1> & MEM_DATA<2>
+;Imported pterms FB8_3
+	# !OUT<0> & OUT<2> & MEM_DATA<6>
+	# !OUT<1> & OUT<2> & !MEM_DATA<7>
+	# !OUT<1> & OUT<2> & MEM_DATA<6>
+	# OUT<0> & OUT<1> & !OUT<2> & !MEM_DATA<7>
+	# MEM_DATA<7> & !MEM_DATA<6> & MEM_DATA<2> & 
+	MEM_DATA<5>
+;Imported pterms FB8_5
+	# OUT<0> & OUT<1> & !OUT<2> & MEM_DATA<6>
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<0> & 
+	!regBOut<1> & !regBOut<2> & MEM_DATA<2>
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<0> & 
+	!regBOut<2> & !MEM_DATA<1> & MEM_DATA<2>
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<1> & 
+	!regBOut<2> & !MEM_DATA<0> & MEM_DATA<2>
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<1> & 
+	!regBOut<2> & !MEM_DATA<1> & MEM_DATA<2>
+;Imported pterms FB8_6
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<2> & 
+	!MEM_DATA<0> & !MEM_DATA<1> & MEM_DATA<2>
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<0> & 
+	!regBOut<1> & regBOut<2> & !MEM_DATA<2> & !MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<0> & 
+	regBOut<2> & !MEM_DATA<1> & !MEM_DATA<2> & !MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<1> & 
+	regBOut<2> & !MEM_DATA<0> & !MEM_DATA<2> & !MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<1> & 
+	regBOut<2> & !MEM_DATA<1> & !MEM_DATA<2> & !MEM_DATA<5>
+;Imported pterms FB8_7
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<1> & 
+	!regBOut<2> & MEM_DATA<1> & !MEM_DATA<2> & !MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<2> & 
+	!MEM_DATA<0> & !MEM_DATA<1> & !MEM_DATA<2> & !MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<0> & 
+	regBOut<1> & !regBOut<2> & MEM_DATA<0> & !MEM_DATA<2> & 
+	!MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<0> & 
+	!regBOut<2> & MEM_DATA<0> & MEM_DATA<1> & !MEM_DATA<2> & 
+	!MEM_DATA<5>;
+   OUT<2>.CLK = CLK;	// GCK
+   OUT<2>.CE = MEM_DATA<7> & !MEM_DATA<6>;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 6 | 4 | OUT_3_OBUF
+ATTRIBUTES | 8815426 | 0
+OUTPUTMC | 3 | 6 | 4 | 6 | 3 | 6 | 5
+INPUTS | 7 | OUT<0>  | OUT<3>  | MEM_DATA<7>  | MEM_DATA<6>  | OUT<1>  | EXP40_.EXP  | EXP41_.EXP
+INPUTMC | 5 | 0 | 2 | 6 | 4 | 4 | 2 | 6 | 3 | 6 | 5
+INPUTP | 2 | 9 | 103
+IMPORTS | 2 | 6 | 3 | 6 | 5
+EQ | 56 | 
+   OUT<3>.D = !OUT<0> & OUT<3> & !MEM_DATA<7>
+	# !OUT<0> & OUT<3> & MEM_DATA<6>
+	# !OUT<1> & OUT<3> & !MEM_DATA<7>
+	# !OUT<1> & OUT<3> & MEM_DATA<6>
+;Imported pterms FB7_4
+	# !OUT<2> & OUT<3> & !MEM_DATA<7>
+	# !OUT<2> & OUT<3> & MEM_DATA<6>
+	# OUT<0> & OUT<1> & OUT<2> & !OUT<3> & 
+	!MEM_DATA<7>
+	# MEM_DATA<7> & !MEM_DATA<6> & MEM_DATA<3> & 
+	!MEM_DATA<2> & MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & MEM_DATA<3> & 
+	MEM_DATA<5> & 
+	!alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+;Imported pterms FB7_3
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<3> & 
+	!MEM_DATA<3> & MEM_DATA<2> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<2> & 
+	regBOut<3> & MEM_DATA<3> & MEM_DATA<2> & !MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<2> & 
+	regBOut<3> & MEM_DATA<3> & !MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<3> & 
+	MEM_DATA<3> & MEM_DATA<2> & !MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<3> & 
+	!MEM_DATA<3> & !MEM_DATA<2> & !MEM_DATA<5> & 
+	!alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+;Imported pterms FB7_6
+	# OUT<0> & OUT<1> & OUT<2> & !OUT<3> & 
+	MEM_DATA<6>
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<2> & 
+	!regBOut<3> & MEM_DATA<3> & !MEM_DATA<2>
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<2> & 
+	!regBOut<3> & MEM_DATA<3> & 
+	!alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<3> & 
+	MEM_DATA<3> & !MEM_DATA<2> & 
+	!alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# MEM_DATA<7> & !MEM_DATA<6> & !MEM_DATA<3> & 
+	MEM_DATA<2> & MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+;Imported pterms FB7_7
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<2> & 
+	!regBOut<3> & !MEM_DATA<3> & MEM_DATA<2> & !MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<2> & 
+	!regBOut<3> & !MEM_DATA<3> & !MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<2> & 
+	regBOut<3> & !MEM_DATA<3> & !MEM_DATA<2> & !MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<2> & 
+	regBOut<3> & !MEM_DATA<3> & !MEM_DATA<5> & 
+	!alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2;
+   OUT<3>.CLK = CLK;	// GCK
+   OUT<3>.CE = MEM_DATA<7> & !MEM_DATA<6>;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 7 | 1 | regAOut<0>
+ATTRIBUTES | 8553280 | 0
+OUTPUTMC | 16 | 7 | 1 | 7 | 17 | 3 | 14 | 2 | 17 | 3 | 9 | 2 | 16 | 3 | 7 | 3 | 8 | 3 | 11 | 3 | 12 | 3 | 13 | 3 | 15 | 3 | 16 | 3 | 17 | 7 | 0 | 7 | 16
+INPUTS | 9 | MEM_DATA<7>  | MEM_DATA<6>  | regBOut<0>  | MEM_DATA<4>  | MEM_DATA<0>  | MEM_DATA<5>  | IN<0>  | regAOut<0>  | EXP45_.EXP
+INPUTMC | 3 | 7 | 17 | 7 | 1 | 7 | 0
+INPUTP | 6 | 9 | 103 | 160 | 28 | 49 | 102
+IMPORTS | 1 | 7 | 0
+EQ | 19 | 
+   regAOut<0>.D = MEM_DATA<7> & !regAOut<0>
+	# !regAOut<0> & !MEM_DATA<4> & MEM_DATA<0> & 
+	!MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<6> & regBOut<0> & 
+	MEM_DATA<4> & !MEM_DATA<0> & !MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<6> & !MEM_DATA<4> & 
+	!MEM_DATA<0> & MEM_DATA<5> & IN<0>
+;Imported pterms FB8_1
+	# MEM_DATA<6> & !regAOut<0>
+	# !MEM_DATA<7> & !MEM_DATA<6> & !regBOut<0> & 
+	MEM_DATA<4> & MEM_DATA<0>
+	# !MEM_DATA<7> & !MEM_DATA<6> & MEM_DATA<4> & 
+	MEM_DATA<0> & MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<6> & MEM_DATA<0> & 
+	MEM_DATA<5> & !IN<0>
+	# !MEM_DATA<7> & !MEM_DATA<6> & regAOut<0> & 
+	!MEM_DATA<4> & !MEM_DATA<0> & !MEM_DATA<5>;
+   regAOut<0>.CLK = CLK;	// GCK
+   regAOut<0>.CE = !MEM_DATA<7> & !MEM_DATA<6>;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 7 | 17 | regBOut<0>
+ATTRIBUTES | 8553280 | 0
+OUTPUTMC | 30 | 0 | 2 | 4 | 2 | 7 | 3 | 7 | 1 | 7 | 17 | 3 | 14 | 3 | 9 | 7 | 15 | 4 | 16 | 1 | 3 | 3 | 4 | 3 | 0 | 0 | 1 | 1 | 2 | 1 | 4 | 3 | 2 | 3 | 5 | 3 | 6 | 3 | 8 | 3 | 10 | 3 | 12 | 3 | 16 | 3 | 17 | 4 | 1 | 4 | 3 | 7 | 0 | 7 | 4 | 7 | 5 | 7 | 6 | 7 | 16
+INPUTS | 8 | MEM_DATA<7>  | MEM_DATA<6>  | regAOut<0>  | MEM_DATA<4>  | MEM_DATA<0>  | MEM_DATA<5>  | regBOut<0>  | EXP50_.EXP
+INPUTMC | 3 | 7 | 1 | 7 | 17 | 7 | 16
+INPUTP | 5 | 9 | 103 | 160 | 28 | 49
+IMPORTS | 1 | 7 | 16
+EQ | 18 | 
+   regBOut<0>.D = MEM_DATA<7> & !regBOut<0>
+	# !MEM_DATA<6> & !regBOut<0>
+	# !regBOut<0> & MEM_DATA<4> & MEM_DATA<0>
+	# !MEM_DATA<7> & MEM_DATA<6> & regAOut<0> & 
+	!MEM_DATA<4> & !MEM_DATA<0> & !MEM_DATA<5>
+;Imported pterms FB8_17
+	# !MEM_DATA<7> & MEM_DATA<6> & MEM_DATA<4> & 
+	MEM_DATA<0> & MEM_DATA<5>
+	# !MEM_DATA<7> & MEM_DATA<6> & MEM_DATA<0> & 
+	MEM_DATA<5> & !IN<0>
+	# !MEM_DATA<7> & MEM_DATA<6> & !regAOut<0> & 
+	!MEM_DATA<4> & MEM_DATA<0> & !MEM_DATA<5>
+	# !MEM_DATA<7> & MEM_DATA<6> & regBOut<0> & 
+	MEM_DATA<4> & !MEM_DATA<0> & !MEM_DATA<5>
+	# !MEM_DATA<7> & MEM_DATA<6> & !MEM_DATA<4> & 
+	!MEM_DATA<0> & MEM_DATA<5> & IN<0>;
+   regBOut<0>.CLK = CLK;	// GCK
+   regBOut<0>.CE = !MEM_DATA<7> & MEM_DATA<6>;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 3 | 14 | regAOut<1>
+ATTRIBUTES | 8553280 | 0
+OUTPUTMC | 13 | 3 | 14 | 2 | 17 | 3 | 9 | 2 | 16 | 3 | 0 | 3 | 7 | 3 | 8 | 3 | 11 | 3 | 12 | 3 | 13 | 3 | 15 | 3 | 16 | 3 | 17
+INPUTS | 12 | regAOut<0>  | regAOut<1>  | MEM_DATA<4>  | MEM_DATA<0>  | MEM_DATA<1>  | MEM_DATA<5>  | MEM_DATA<7>  | MEM_DATA<6>  | regBOut<0>  | regBOut<1>  | EXP31_.EXP  | EXP32_.EXP
+INPUTMC | 6 | 7 | 1 | 3 | 14 | 7 | 17 | 3 | 9 | 3 | 13 | 3 | 15
+INPUTP | 6 | 160 | 28 | 90 | 49 | 9 | 103
+IMPORTS | 2 | 3 | 13 | 3 | 15
+EQ | 50 | 
+   regAOut<1>.D = !regAOut<0> & regAOut<1> & !MEM_DATA<4> & 
+	!MEM_DATA<1> & !MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<6> & !regBOut<0> & 
+	!regBOut<1> & MEM_DATA<4> & MEM_DATA<1>
+	# regAOut<0> & !regAOut<1> & !MEM_DATA<4> & 
+	!MEM_DATA<0> & MEM_DATA<1> & !MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<6> & regBOut<0> & 
+	regBOut<1> & MEM_DATA<4> & MEM_DATA<0> & MEM_DATA<1>
+;Imported pterms FB4_14
+	# MEM_DATA<7> & regAOut<0> & !regAOut<1>
+	# MEM_DATA<6> & regAOut<0> & !regAOut<1>
+	# !MEM_DATA<7> & !MEM_DATA<6> & MEM_DATA<1> & 
+	MEM_DATA<5> & !IN<0> & !IN<1>
+	# regAOut<0> & !regAOut<1> & !MEM_DATA<4> & 
+	MEM_DATA<0> & !MEM_DATA<1> & !MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<6> & MEM_DATA<0> & 
+	MEM_DATA<1> & MEM_DATA<5> & IN<0> & IN<1>
+;Imported pterms FB4_13
+	# !MEM_DATA<7> & !MEM_DATA<6> & !regAOut<0> & 
+	!regAOut<1> & !MEM_DATA<4> & MEM_DATA<1> & !MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<6> & !regBOut<0> & 
+	regBOut<1> & MEM_DATA<4> & !MEM_DATA<1> & !MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<6> & regAOut<1> & 
+	!MEM_DATA<4> & !MEM_DATA<0> & !MEM_DATA<1> & !MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<6> & !MEM_DATA<4> & 
+	!MEM_DATA<0> & !MEM_DATA<1> & MEM_DATA<5> & IN<1>
+	# !MEM_DATA<7> & !MEM_DATA<6> & !MEM_DATA<4> & 
+	!MEM_DATA<1> & MEM_DATA<5> & !IN<0> & IN<1>
+;Imported pterms FB4_16
+	# MEM_DATA<7> & !regAOut<0> & regAOut<1>
+	# MEM_DATA<6> & !regAOut<0> & regAOut<1>
+	# !MEM_DATA<7> & !MEM_DATA<6> & MEM_DATA<4> & 
+	MEM_DATA<1> & MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<6> & !regBOut<1> & 
+	MEM_DATA<4> & !MEM_DATA<0> & MEM_DATA<1>
+	# !MEM_DATA<7> & !MEM_DATA<6> & !MEM_DATA<0> & 
+	MEM_DATA<1> & MEM_DATA<5> & !IN<1>
+;Imported pterms FB4_17
+	# !MEM_DATA<7> & !MEM_DATA<6> & regBOut<1> & 
+	MEM_DATA<4> & !MEM_DATA<0> & !MEM_DATA<1> & !MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<6> & regAOut<0> & 
+	regAOut<1> & !MEM_DATA<4> & MEM_DATA<0> & MEM_DATA<1> & 
+	!MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<6> & regBOut<0> & 
+	!regBOut<1> & MEM_DATA<4> & MEM_DATA<0> & !MEM_DATA<1> & 
+	!MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<6> & !MEM_DATA<4> & 
+	MEM_DATA<0> & !MEM_DATA<1> & MEM_DATA<5> & IN<0> & !IN<1>;
+   regAOut<1>.CLK = CLK;	// GCK
+   regAOut<1>.CE = !MEM_DATA<7> & !MEM_DATA<6>;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 2 | 17 | regAOut<2>
+ATTRIBUTES | 4358976 | 0
+OUTPUTMC | 8 | 2 | 17 | 2 | 16 | 0 | 15 | 6 | 0 | 6 | 16 | 0 | 13 | 0 | 14 | 6 | 17
+INPUTS | 6 | MEM_DATA<6>  | regAOut<0>  | regAOut<1>  | MEM_DATA<7>  | regAOut<2>  | $OpTx$FX_DC$26
+INPUTMC | 4 | 7 | 1 | 3 | 14 | 2 | 17 | 6 | 0
+INPUTP | 2 | 103 | 9
+EQ | 8 | 
+   regAOut<2>.T = MEM_DATA<7> & regAOut<0> & regAOut<1>
+	# MEM_DATA<6> & regAOut<0> & regAOut<1>
+	# !MEM_DATA<7> & !MEM_DATA<6> & regAOut<2> & 
+	!$OpTx$FX_DC$26
+	# !MEM_DATA<7> & !MEM_DATA<6> & !regAOut<2> & 
+	$OpTx$FX_DC$26;
+   regAOut<2>.CLK = CLK;	// GCK
+   regAOut<2>.CE = !MEM_DATA<7> & !MEM_DATA<6>;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 3 | 9 | regBOut<1>
+ATTRIBUTES | 8553280 | 0
+OUTPUTMC | 23 | 4 | 2 | 7 | 3 | 3 | 14 | 3 | 9 | 7 | 15 | 4 | 16 | 3 | 4 | 3 | 0 | 3 | 2 | 3 | 5 | 3 | 6 | 3 | 8 | 3 | 10 | 3 | 11 | 3 | 12 | 3 | 15 | 3 | 16 | 3 | 17 | 4 | 1 | 4 | 3 | 7 | 4 | 7 | 5 | 7 | 6
+INPUTS | 14 | MEM_DATA<7>  | MEM_DATA<6>  | MEM_DATA<0>  | MEM_DATA<1>  | MEM_DATA<5>  | IN<0>  | IN<1>  | regBOut<0>  | regBOut<1>  | MEM_DATA<4>  | regAOut<0>  | regAOut<1>  | EXP27_.EXP  | EXP28_.EXP
+INPUTMC | 6 | 7 | 17 | 3 | 9 | 7 | 1 | 3 | 14 | 3 | 8 | 3 | 10
+INPUTP | 8 | 9 | 103 | 28 | 90 | 49 | 102 | 125 | 160
+IMPORTS | 2 | 3 | 8 | 3 | 10
+EQ | 50 | 
+   regBOut<1>.D = regBOut<0> & !regBOut<1> & MEM_DATA<4> & 
+	!MEM_DATA<0> & MEM_DATA<1>
+	# !regBOut<0> & regBOut<1> & MEM_DATA<4> & 
+	!MEM_DATA<1> & !MEM_DATA<5>
+	# !MEM_DATA<7> & MEM_DATA<6> & !regAOut<0> & 
+	!regAOut<1> & !MEM_DATA<4> & MEM_DATA<1> & !MEM_DATA<5>
+	# !MEM_DATA<7> & MEM_DATA<6> & MEM_DATA<0> & 
+	MEM_DATA<1> & MEM_DATA<5> & IN<0> & IN<1>
+;Imported pterms FB4_9
+	# MEM_DATA<7> & regBOut<0> & !regBOut<1>
+	# !MEM_DATA<6> & regBOut<0> & !regBOut<1>
+	# regBOut<0> & !regBOut<1> & MEM_DATA<4> & 
+	MEM_DATA<0> & !MEM_DATA<1> & !MEM_DATA<5>
+	# !MEM_DATA<7> & MEM_DATA<6> & regBOut<0> & 
+	regBOut<1> & MEM_DATA<4> & MEM_DATA<0> & MEM_DATA<1>
+	# !MEM_DATA<7> & MEM_DATA<6> & regAOut<0> & 
+	regAOut<1> & !MEM_DATA<4> & MEM_DATA<0> & MEM_DATA<1> & 
+	!MEM_DATA<5>
+;Imported pterms FB4_8
+	# !MEM_DATA<7> & MEM_DATA<6> & !MEM_DATA<0> & 
+	MEM_DATA<1> & MEM_DATA<5> & !IN<1>
+	# !MEM_DATA<7> & MEM_DATA<6> & !regAOut<0> & 
+	regAOut<1> & !MEM_DATA<4> & !MEM_DATA<1> & !MEM_DATA<5>
+	# !MEM_DATA<7> & MEM_DATA<6> & !regAOut<1> & 
+	!MEM_DATA<4> & !MEM_DATA<0> & MEM_DATA<1> & !MEM_DATA<5>
+	# !MEM_DATA<7> & MEM_DATA<6> & !MEM_DATA<4> & 
+	!MEM_DATA<0> & !MEM_DATA<1> & MEM_DATA<5> & IN<1>
+	# !MEM_DATA<7> & MEM_DATA<6> & !MEM_DATA<4> & 
+	!MEM_DATA<1> & MEM_DATA<5> & !IN<0> & IN<1>
+;Imported pterms FB4_11
+	# MEM_DATA<7> & !regBOut<0> & regBOut<1>
+	# !MEM_DATA<6> & !regBOut<0> & regBOut<1>
+	# !MEM_DATA<7> & MEM_DATA<6> & MEM_DATA<4> & 
+	MEM_DATA<1> & MEM_DATA<5>
+	# !MEM_DATA<7> & MEM_DATA<6> & !regBOut<0> & 
+	!regBOut<1> & MEM_DATA<4> & MEM_DATA<1>
+	# !MEM_DATA<7> & MEM_DATA<6> & MEM_DATA<1> & 
+	MEM_DATA<5> & !IN<0> & !IN<1>
+;Imported pterms FB4_12
+	# !MEM_DATA<7> & MEM_DATA<6> & regAOut<1> & 
+	!MEM_DATA<4> & !MEM_DATA<0> & !MEM_DATA<1> & !MEM_DATA<5>
+	# !MEM_DATA<7> & MEM_DATA<6> & regBOut<1> & 
+	MEM_DATA<4> & !MEM_DATA<0> & !MEM_DATA<1> & !MEM_DATA<5>
+	# !MEM_DATA<7> & MEM_DATA<6> & regAOut<0> & 
+	!regAOut<1> & !MEM_DATA<4> & MEM_DATA<0> & !MEM_DATA<1> & 
+	!MEM_DATA<5>
+	# !MEM_DATA<7> & MEM_DATA<6> & !MEM_DATA<4> & 
+	MEM_DATA<0> & !MEM_DATA<1> & MEM_DATA<5> & IN<0> & !IN<1>;
+   regBOut<1>.CLK = CLK;	// GCK
+   regBOut<1>.CE = !MEM_DATA<7> & MEM_DATA<6>;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 7 | 15 | regBOut<2>
+ATTRIBUTES | 4358976 | 0
+OUTPUTMC | 18 | 7 | 3 | 6 | 2 | 7 | 15 | 4 | 16 | 0 | 15 | 6 | 0 | 6 | 17 | 0 | 13 | 0 | 14 | 0 | 16 | 0 | 17 | 6 | 1 | 6 | 5 | 6 | 6 | 6 | 16 | 7 | 4 | 7 | 5 | 7 | 6
+INPUTS | 6 | MEM_DATA<6>  | regBOut<0>  | regBOut<1>  | MEM_DATA<7>  | regBOut<2>  | $OpTx$FX_DC$26
+INPUTMC | 4 | 7 | 17 | 3 | 9 | 7 | 15 | 6 | 0
+INPUTP | 2 | 103 | 9
+EQ | 8 | 
+   regBOut<2>.T = MEM_DATA<7> & regBOut<0> & regBOut<1>
+	# !MEM_DATA<6> & regBOut<0> & regBOut<1>
+	# !MEM_DATA<7> & MEM_DATA<6> & regBOut<2> & 
+	!$OpTx$FX_DC$26
+	# !MEM_DATA<7> & MEM_DATA<6> & !regBOut<2> & 
+	$OpTx$FX_DC$26;
+   regBOut<2>.CLK = CLK;	// GCK
+   regBOut<2>.CE = !MEM_DATA<7> & MEM_DATA<6>;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 2 | 16 | regAOut<3>
+ATTRIBUTES | 4358976 | 0
+OUTPUTMC | 6 | 2 | 16 | 0 | 15 | 4 | 0 | 0 | 13 | 0 | 16 | 0 | 17
+INPUTS | 7 | MEM_DATA<7>  | MEM_DATA<6>  | regAOut<3>  | $OpTx$FX_DC$27  | regAOut<0>  | regAOut<1>  | regAOut<2>
+INPUTMC | 5 | 2 | 16 | 6 | 17 | 7 | 1 | 3 | 14 | 2 | 17
+INPUTP | 2 | 9 | 103
+EQ | 10 | 
+   regAOut<3>.T = MEM_DATA<7> & regAOut<0> & regAOut<1> & 
+	regAOut<2>
+	# !MEM_DATA<7> & !MEM_DATA<6> & regAOut<3> & 
+	!$OpTx$FX_DC$27
+	# !MEM_DATA<7> & !MEM_DATA<6> & !regAOut<3> & 
+	$OpTx$FX_DC$27
+	# MEM_DATA<6> & regAOut<0> & regAOut<1> & 
+	regAOut<2>;
+   regAOut<3>.CLK = CLK;	// GCK
+   regAOut<3>.CE = !MEM_DATA<7> & !MEM_DATA<6>;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 4 | 16 | regBOut<3>
+ATTRIBUTES | 4358976 | 0
+OUTPUTMC | 10 | 6 | 2 | 4 | 16 | 0 | 14 | 4 | 0 | 0 | 13 | 0 | 16 | 0 | 17 | 4 | 17 | 6 | 5 | 6 | 6
+INPUTS | 7 | MEM_DATA<6>  | regBOut<0>  | regBOut<1>  | regBOut<2>  | MEM_DATA<7>  | regBOut<3>  | $OpTx$FX_DC$27
+INPUTMC | 5 | 7 | 17 | 3 | 9 | 7 | 15 | 4 | 16 | 6 | 17
+INPUTP | 2 | 103 | 9
+EQ | 10 | 
+   regBOut<3>.T = MEM_DATA<7> & regBOut<0> & regBOut<1> & 
+	regBOut<2>
+	# !MEM_DATA<7> & MEM_DATA<6> & regBOut<3> & 
+	!$OpTx$FX_DC$27
+	# !MEM_DATA<7> & MEM_DATA<6> & !regBOut<3> & 
+	$OpTx$FX_DC$27
+	# !MEM_DATA<6> & regBOut<0> & regBOut<1> & 
+	regBOut<2>;
+   regBOut<3>.CLK = CLK;	// GCK
+   regBOut<3>.CE = !MEM_DATA<7> & MEM_DATA<6>;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 1 | 3 | MEM_ADDR_0_OBUF
+ATTRIBUTES | 8815362 | 0
+OUTPUTMC | 5 | 1 | 3 | 3 | 4 | 2 | 2 | 2 | 9 | 3 | 3
+INPUTS | 10 | MEM_DATA<7>  | MEM_ADDR<0>  | MEM_DATA<6>  | MEM_DATA<4>  | carryOut  | MEM_DATA<0>  | MEM_DATA<5>  | regBOut<0>  | EXP15_.EXP  | EXP16_.EXP
+INPUTMC | 5 | 1 | 3 | 0 | 15 | 7 | 17 | 1 | 2 | 1 | 4
+INPUTP | 5 | 9 | 103 | 160 | 28 | 49
+IMPORTS | 2 | 1 | 2 | 1 | 4
+EQ | 18 | 
+   MEM_ADDR<0>.D = !MEM_DATA<7> & !MEM_ADDR<0>
+	# !MEM_DATA<6> & !MEM_ADDR<0>
+	# !MEM_ADDR<0> & !MEM_DATA<4> & carryOut
+	# MEM_DATA<7> & MEM_DATA<6> & !regBOut<0> & 
+	MEM_DATA<4> & MEM_DATA<0>
+	# MEM_DATA<7> & MEM_DATA<6> & MEM_DATA<4> & 
+	MEM_DATA<0> & MEM_DATA<5>
+;Imported pterms FB2_3
+	# MEM_DATA<7> & MEM_DATA<6> & !regBOut<0> & 
+	MEM_DATA<0> & !carryOut
+	# MEM_DATA<7> & MEM_DATA<6> & MEM_DATA<0> & 
+	!carryOut & MEM_DATA<5>
+;Imported pterms FB2_5
+	# MEM_DATA<7> & MEM_DATA<6> & regBOut<0> & 
+	MEM_DATA<4> & !MEM_DATA<0> & !MEM_DATA<5>
+	# MEM_DATA<7> & MEM_DATA<6> & regBOut<0> & 
+	!MEM_DATA<0> & !carryOut & !MEM_DATA<5>;
+   MEM_ADDR<0>.CLK = CLK;	// GCK
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 3 | 4 | MEM_ADDR_1_OBUF
+ATTRIBUTES | 8815362 | 0
+OUTPUTMC | 4 | 3 | 4 | 2 | 2 | 2 | 9 | 3 | 3
+INPUTS | 12 | MEM_DATA<7>  | MEM_DATA<6>  | regBOut<0>  | regBOut<1>  | MEM_DATA<4>  | MEM_DATA<0>  | MEM_DATA<1>  | carryOut  | MEM_ADDR<0>  | MEM_ADDR<1>  | EXP23_.EXP  | EXP24_.EXP
+INPUTMC | 7 | 7 | 17 | 3 | 9 | 0 | 15 | 1 | 3 | 3 | 4 | 3 | 3 | 3 | 5
+INPUTP | 5 | 9 | 103 | 160 | 28 | 90
+IMPORTS | 2 | 3 | 3 | 3 | 5
+EQ | 43 | 
+   MEM_ADDR<1>.D = !MEM_DATA<7> & MEM_ADDR<0> & !MEM_ADDR<1>
+	# !MEM_DATA<7> & !MEM_ADDR<0> & MEM_ADDR<1>
+	# !MEM_DATA<6> & !MEM_ADDR<0> & MEM_ADDR<1>
+	# MEM_DATA<7> & MEM_DATA<6> & regBOut<0> & 
+	regBOut<1> & MEM_DATA<4> & MEM_DATA<0> & MEM_DATA<1>
+	# MEM_DATA<7> & MEM_DATA<6> & regBOut<0> & 
+	regBOut<1> & MEM_DATA<0> & !carryOut & MEM_DATA<1>
+;Imported pterms FB4_4
+	# !MEM_DATA<6> & MEM_ADDR<0> & !MEM_ADDR<1>
+	# MEM_ADDR<0> & !MEM_ADDR<1> & !MEM_DATA<4> & 
+	carryOut
+	# !MEM_ADDR<0> & MEM_ADDR<1> & !MEM_DATA<4> & 
+	carryOut
+	# MEM_DATA<7> & MEM_DATA<6> & MEM_DATA<4> & 
+	MEM_DATA<1> & MEM_DATA<5>
+	# MEM_DATA<7> & MEM_DATA<6> & !carryOut & 
+	MEM_DATA<1> & MEM_DATA<5>
+;Imported pterms FB4_3
+	# MEM_DATA<7> & MEM_DATA<6> & !regBOut<0> & 
+	regBOut<1> & !carryOut & !MEM_DATA<1> & !MEM_DATA<5>
+	# MEM_DATA<7> & MEM_DATA<6> & regBOut<1> & 
+	MEM_DATA<4> & !MEM_DATA<0> & !MEM_DATA<1> & !MEM_DATA<5>
+	# MEM_DATA<7> & MEM_DATA<6> & regBOut<1> & 
+	!MEM_DATA<0> & !carryOut & !MEM_DATA<1> & !MEM_DATA<5>
+;Imported pterms FB4_6
+	# MEM_DATA<7> & MEM_DATA<6> & !regBOut<0> & 
+	!regBOut<1> & MEM_DATA<4> & MEM_DATA<1>
+	# MEM_DATA<7> & MEM_DATA<6> & !regBOut<0> & 
+	!regBOut<1> & !carryOut & MEM_DATA<1>
+	# MEM_DATA<7> & MEM_DATA<6> & !regBOut<1> & 
+	MEM_DATA<4> & !MEM_DATA<0> & MEM_DATA<1>
+	# MEM_DATA<7> & MEM_DATA<6> & !regBOut<1> & 
+	!MEM_DATA<0> & !carryOut & MEM_DATA<1>
+	# MEM_DATA<7> & MEM_DATA<6> & !regBOut<0> & 
+	regBOut<1> & MEM_DATA<4> & !MEM_DATA<1> & !MEM_DATA<5>
+;Imported pterms FB4_7
+	# MEM_DATA<7> & MEM_DATA<6> & regBOut<0> & 
+	!regBOut<1> & MEM_DATA<4> & MEM_DATA<0> & !MEM_DATA<1> & 
+	!MEM_DATA<5>
+	# MEM_DATA<7> & MEM_DATA<6> & regBOut<0> & 
+	!regBOut<1> & MEM_DATA<0> & !carryOut & !MEM_DATA<1> & 
+	!MEM_DATA<5>;
+   MEM_ADDR<1>.CLK = CLK;	// GCK
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 2 | 2 | MEM_ADDR_2_OBUF
+ATTRIBUTES | 4621058 | 0
+OUTPUTMC | 4 | 2 | 2 | 2 | 9 | 2 | 1 | 2 | 3
+INPUTS | 10 | MEM_DATA<6>  | MEM_ADDR<0>  | MEM_ADDR<1>  | MEM_DATA<7>  | MEM_ADDR<2>  | carryOut  | $OpTx$FX_DC$26  | MEM_DATA<4>  | EXP17_.EXP  | EXP18_.EXP
+INPUTMC | 7 | 1 | 3 | 3 | 4 | 2 | 2 | 0 | 15 | 6 | 0 | 2 | 1 | 2 | 3
+INPUTP | 3 | 103 | 9 | 160
+IMPORTS | 2 | 2 | 1 | 2 | 3
+EQ | 15 | 
+   MEM_ADDR<2>.T = !MEM_DATA<7> & MEM_ADDR<0> & MEM_ADDR<1>
+	# !MEM_DATA<6> & MEM_ADDR<0> & MEM_ADDR<1>
+	# MEM_ADDR<0> & MEM_ADDR<1> & !MEM_DATA<4> & 
+	carryOut
+	# MEM_DATA<7> & MEM_DATA<6> & !MEM_ADDR<2> & 
+	MEM_DATA<4> & $OpTx$FX_DC$26
+	# MEM_DATA<7> & MEM_DATA<6> & !MEM_ADDR<2> & 
+	!carryOut & $OpTx$FX_DC$26
+;Imported pterms FB3_2
+	# MEM_DATA<7> & MEM_DATA<6> & MEM_ADDR<2> & 
+	!carryOut & !$OpTx$FX_DC$26
+;Imported pterms FB3_4
+	# MEM_DATA<7> & MEM_DATA<6> & MEM_ADDR<2> & 
+	MEM_DATA<4> & !$OpTx$FX_DC$26;
+   MEM_ADDR<2>.CLK = CLK;	// GCK
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 2 | 9 | MEM_ADDR_3_OBUF
+ATTRIBUTES | 4621058 | 0
+OUTPUTMC | 3 | 2 | 9 | 2 | 8 | 2 | 10
+INPUTS | 11 | MEM_DATA<6>  | MEM_ADDR<0>  | MEM_ADDR<1>  | MEM_ADDR<2>  | MEM_DATA<7>  | MEM_ADDR<3>  | carryOut  | $OpTx$FX_DC$27  | MEM_DATA<4>  | EXP19_.EXP  | EXP20_.EXP
+INPUTMC | 8 | 1 | 3 | 3 | 4 | 2 | 2 | 2 | 9 | 0 | 15 | 6 | 17 | 2 | 8 | 2 | 10
+INPUTP | 3 | 103 | 9 | 160
+IMPORTS | 2 | 2 | 8 | 2 | 10
+EQ | 17 | 
+   MEM_ADDR<3>.T = !MEM_DATA<7> & MEM_ADDR<0> & MEM_ADDR<1> & 
+	MEM_ADDR<2>
+	# !MEM_DATA<6> & MEM_ADDR<0> & MEM_ADDR<1> & 
+	MEM_ADDR<2>
+	# MEM_DATA<7> & MEM_DATA<6> & !MEM_ADDR<3> & 
+	MEM_DATA<4> & $OpTx$FX_DC$27
+	# MEM_DATA<7> & MEM_DATA<6> & !MEM_ADDR<3> & 
+	!carryOut & $OpTx$FX_DC$27
+	# MEM_ADDR<0> & MEM_ADDR<1> & MEM_ADDR<2> & 
+	!MEM_DATA<4> & carryOut
+;Imported pterms FB3_9
+	# MEM_DATA<7> & MEM_DATA<6> & MEM_ADDR<3> & 
+	!carryOut & !$OpTx$FX_DC$27
+;Imported pterms FB3_11
+	# MEM_DATA<7> & MEM_DATA<6> & MEM_ADDR<3> & 
+	MEM_DATA<4> & !$OpTx$FX_DC$27;
+   MEM_ADDR<3>.CLK = CLK;	// GCK
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 0 | 15 | carryOut
+ATTRIBUTES | 8553216 | 0
+OUTPUTMC | 12 | 1 | 3 | 3 | 4 | 2 | 2 | 2 | 9 | 1 | 2 | 1 | 4 | 2 | 1 | 2 | 8 | 3 | 2 | 3 | 3 | 3 | 5 | 3 | 6
+INPUTS | 13 | MEM_DATA<7>  | MEM_DATA<4>  | MEM_DATA<3>  | MEM_DATA<5>  | IN<2>  | alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2  | MEM_DATA<2>  | IN<3>  | regAOut<2>  | regAOut<3>  | regBOut<2>  | EXP12_.EXP  | EXP13_.EXP
+INPUTMC | 6 | 3 | 0 | 2 | 17 | 2 | 16 | 7 | 15 | 0 | 14 | 0 | 16
+INPUTP | 7 | 9 | 160 | 59 | 49 | 141 | 145 | 69
+IMPORTS | 2 | 0 | 14 | 0 | 16
+EQ | 67 | 
+   carryOut.D = regBOut<2> & MEM_DATA<4> & MEM_DATA<3> & 
+	!MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# !MEM_DATA<7> & regAOut<2> & regAOut<3> & 
+	!MEM_DATA<4> & MEM_DATA<2> & !MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<4> & MEM_DATA<3> & 
+	MEM_DATA<2> & MEM_DATA<5> & IN<2>
+	# !MEM_DATA<7> & !MEM_DATA<4> & MEM_DATA<3> & 
+	MEM_DATA<5> & IN<2> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# !MEM_DATA<7> & !MEM_DATA<4> & MEM_DATA<2> & 
+	MEM_DATA<5> & IN<2> & IN<3>
+;Imported pterms FB1_15
+	# MEM_DATA<3> & MEM_DATA<2> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# regBOut<2> & regBOut<3> & MEM_DATA<4> & 
+	MEM_DATA<2> & !MEM_DATA<5>
+	# regBOut<2> & MEM_DATA<4> & MEM_DATA<3> & 
+	MEM_DATA<2> & !MEM_DATA<5>
+	# !MEM_DATA<7> & regAOut<2> & !MEM_DATA<4> & 
+	MEM_DATA<3> & MEM_DATA<2> & !MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<4> & MEM_DATA<2> & 
+	MEM_DATA<5> & IN<3> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+;Imported pterms FB1_14
+	# MEM_DATA<7> & regBOut<2> & MEM_DATA<3> & 
+	MEM_DATA<2> & !MEM_DATA<5>
+	# MEM_DATA<7> & regBOut<3> & MEM_DATA<2> & 
+	!MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# regBOut<2> & regBOut<3> & MEM_DATA<4> & 
+	!MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# !MEM_DATA<7> & regAOut<2> & regAOut<3> & 
+	!MEM_DATA<4> & !MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# !MEM_DATA<7> & regAOut<2> & !MEM_DATA<4> & 
+	MEM_DATA<3> & !MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+;Imported pterms FB1_17
+	# MEM_DATA<7> & regBOut<2> & regBOut<3> & 
+	MEM_DATA<2> & !MEM_DATA<5>
+	# MEM_DATA<7> & regBOut<2> & MEM_DATA<3> & 
+	!MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# regBOut<3> & MEM_DATA<4> & MEM_DATA<2> & 
+	!MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# !MEM_DATA<7> & regAOut<3> & !MEM_DATA<4> & 
+	MEM_DATA<2> & !MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# !MEM_DATA<7> & !MEM_DATA<4> & MEM_DATA<5> & IN<2> & 
+	IN<3> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+;Imported pterms FB1_18
+	# MEM_DATA<7> & regBOut<3> & MEM_DATA<3> & 
+	!MEM_DATA<5>
+	# regBOut<3> & MEM_DATA<4> & MEM_DATA<3> & 
+	!MEM_DATA<5>
+	# MEM_DATA<7> & regBOut<2> & regBOut<3> & 
+	!MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# !MEM_DATA<7> & regAOut<3> & !MEM_DATA<4> & 
+	MEM_DATA<3> & !MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<4> & MEM_DATA<3> & 
+	MEM_DATA<5> & IN<3>;
+   carryOut.CLK = CLK;	// GCK
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 3 | 0 | alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 13 | 6 | 3 | 0 | 15 | 6 | 0 | 6 | 17 | 0 | 13 | 0 | 14 | 0 | 16 | 0 | 17 | 6 | 2 | 6 | 5 | 6 | 6 | 6 | 15 | 6 | 16
+INPUTS | 11 | regBOut<1>  | MEM_DATA<4>  | MEM_DATA<1>  | MEM_DATA<5>  | MEM_DATA<7>  | IN<1>  | regAOut<1>  | regBOut<0>  | MEM_DATA<0>  | EXP21_.EXP  | EXP34_.EXP
+INPUTMC | 5 | 3 | 9 | 3 | 14 | 7 | 17 | 3 | 1 | 3 | 17
+INPUTP | 6 | 160 | 90 | 49 | 9 | 125 | 28
+IMPORTS | 2 | 3 | 1 | 3 | 17
+EQ | 26 | 
+   alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2 = MEM_DATA<7> & regBOut<1> & MEM_DATA<1> & 
+	!MEM_DATA<5>
+	# regBOut<1> & MEM_DATA<4> & MEM_DATA<1> & 
+	!MEM_DATA<5>
+	# !MEM_DATA<7> & regAOut<1> & !MEM_DATA<4> & 
+	MEM_DATA<1> & !MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<4> & MEM_DATA<1> & 
+	MEM_DATA<5> & IN<1>
+	# regBOut<0> & MEM_DATA<4> & MEM_DATA<0> & 
+	MEM_DATA<1> & !MEM_DATA<5>
+;Imported pterms FB4_2
+	# !MEM_DATA<7> & !MEM_DATA<4> & MEM_DATA<0> & 
+	MEM_DATA<1> & MEM_DATA<5> & IN<0>
+	# !MEM_DATA<7> & !MEM_DATA<4> & MEM_DATA<0> & 
+	MEM_DATA<5> & IN<0> & IN<1>
+;Imported pterms FB4_18
+	# MEM_DATA<7> & regBOut<0> & regBOut<1> & 
+	MEM_DATA<0> & !MEM_DATA<5>
+	# MEM_DATA<7> & regBOut<0> & MEM_DATA<0> & 
+	MEM_DATA<1> & !MEM_DATA<5>
+	# regBOut<0> & regBOut<1> & MEM_DATA<4> & 
+	MEM_DATA<0> & !MEM_DATA<5>
+	# !MEM_DATA<7> & regAOut<0> & regAOut<1> & 
+	!MEM_DATA<4> & MEM_DATA<0> & !MEM_DATA<5>
+	# !MEM_DATA<7> & regAOut<0> & !MEM_DATA<4> & 
+	MEM_DATA<0> & MEM_DATA<1> & !MEM_DATA<5>;
+
+MACROCELL | 6 | 0 | $OpTx$FX_DC$26
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 5 | 2 | 17 | 7 | 15 | 2 | 2 | 2 | 1 | 2 | 3
+INPUTS | 10 | alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2  | MEM_DATA<7>  | regAOut<2>  | MEM_DATA<4>  | MEM_DATA<2>  | MEM_DATA<5>  | regBOut<2>  | IN<2>  | EXP38_.EXP  | $OpTx$FX_DC$27.EXP
+INPUTMC | 5 | 3 | 0 | 2 | 17 | 7 | 15 | 6 | 1 | 6 | 17
+INPUTP | 5 | 9 | 160 | 145 | 49 | 141
+IMPORTS | 2 | 6 | 1 | 6 | 17
+EQ | 19 | 
+   $OpTx$FX_DC$26 = 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	$ MEM_DATA<7> & regBOut<2> & !MEM_DATA<2> & 
+	!MEM_DATA<5>
+	# regBOut<2> & MEM_DATA<4> & !MEM_DATA<2> & 
+	!MEM_DATA<5>
+	# !MEM_DATA<7> & regAOut<2> & !MEM_DATA<4> & 
+	!MEM_DATA<2> & !MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<4> & !MEM_DATA<2> & 
+	MEM_DATA<5> & IN<2>
+;Imported pterms FB7_2
+	# MEM_DATA<7> & !regBOut<2> & MEM_DATA<2>
+	# MEM_DATA<7> & MEM_DATA<2> & MEM_DATA<5>
+	# !regBOut<2> & MEM_DATA<4> & MEM_DATA<2>
+	# MEM_DATA<4> & MEM_DATA<2> & MEM_DATA<5>
+	# MEM_DATA<2> & MEM_DATA<5> & !IN<2>
+;Imported pterms FB7_18
+	# !MEM_DATA<7> & !regAOut<2> & !MEM_DATA<4> & 
+	MEM_DATA<2> & !MEM_DATA<5>;
+
+MACROCELL | 6 | 17 | $OpTx$FX_DC$27
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 6 | 2 | 16 | 4 | 16 | 2 | 9 | 2 | 8 | 2 | 10 | 6 | 0
+INPUTS | 9 | alu/Madd_AUX_6_addsub0000_Mxor_Result<3>__xor0000/alu/Madd_AUX_6_addsub0000_Mxor_Result<3>__xor0000_D  | MEM_DATA<2>  | alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2  | regBOut<2>  | MEM_DATA<4>  | MEM_DATA<5>  | MEM_DATA<7>  | regAOut<2>  | EXP44_.EXP
+INPUTMC | 5 | 4 | 0 | 3 | 0 | 7 | 15 | 2 | 17 | 6 | 16
+INPUTP | 4 | 145 | 160 | 49 | 9
+EXPORTS | 1 | 6 | 0
+IMPORTS | 1 | 6 | 16
+EQ | 25 | 
+   $OpTx$FX_DC$27 = 
+	alu/Madd_AUX_6_addsub0000_Mxor_Result<3>__xor0000/alu/Madd_AUX_6_addsub0000_Mxor_Result<3>__xor0000_D
+	$ MEM_DATA<2> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# regBOut<2> & MEM_DATA<4> & MEM_DATA<2> & 
+	!MEM_DATA<5>
+	# regBOut<2> & MEM_DATA<4> & !MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+;Imported pterms FB7_17
+	# MEM_DATA<7> & regBOut<2> & MEM_DATA<2> & 
+	!MEM_DATA<5>
+	# MEM_DATA<7> & regBOut<2> & !MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# !MEM_DATA<7> & regAOut<2> & !MEM_DATA<4> & 
+	MEM_DATA<2> & !MEM_DATA<5>
+	# !MEM_DATA<7> & regAOut<2> & !MEM_DATA<4> & 
+	!MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# !MEM_DATA<7> & !MEM_DATA<4> & MEM_DATA<2> & 
+	MEM_DATA<5> & IN<2>
+;Imported pterms FB7_16
+	# !MEM_DATA<7> & !MEM_DATA<4> & MEM_DATA<5> & IN<2> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2;
+    $OpTx$FX_DC$27.EXP  =  !MEM_DATA<7> & !regAOut<2> & !MEM_DATA<4> & 
+	MEM_DATA<2> & !MEM_DATA<5>
+
+MACROCELL | 4 | 0 | alu/Madd_AUX_6_addsub0000_Mxor_Result<3>__xor0000/alu/Madd_AUX_6_addsub0000_Mxor_Result<3>__xor0000_D
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 1 | 6 | 17
+INPUTS | 8 | MEM_DATA<7>  | regAOut<3>  | MEM_DATA<4>  | MEM_DATA<3>  | MEM_DATA<5>  | regBOut<3>  | IN<3>  | EXP37_.EXP
+INPUTMC | 3 | 2 | 16 | 4 | 16 | 4 | 17
+INPUTP | 5 | 9 | 160 | 59 | 49 | 69
+IMPORTS | 1 | 4 | 17
+EQ | 16 | 
+   alu/Madd_AUX_6_addsub0000_Mxor_Result<3>__xor0000/alu/Madd_AUX_6_addsub0000_Mxor_Result<3>__xor0000_D = MEM_DATA<7> & regBOut<3> & !MEM_DATA<3> & 
+	!MEM_DATA<5>
+	# regBOut<3> & MEM_DATA<4> & !MEM_DATA<3> & 
+	!MEM_DATA<5>
+	# !MEM_DATA<7> & regAOut<3> & !MEM_DATA<4> & 
+	!MEM_DATA<3> & !MEM_DATA<5>
+	# !MEM_DATA<7> & !regAOut<3> & !MEM_DATA<4> & 
+	MEM_DATA<3> & !MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<4> & !MEM_DATA<3> & 
+	MEM_DATA<5> & IN<3>
+;Imported pterms FB5_18
+	# MEM_DATA<7> & !regBOut<3> & MEM_DATA<3>
+	# MEM_DATA<7> & MEM_DATA<3> & MEM_DATA<5>
+	# !regBOut<3> & MEM_DATA<4> & MEM_DATA<3>
+	# MEM_DATA<4> & MEM_DATA<3> & MEM_DATA<5>
+	# MEM_DATA<3> & MEM_DATA<5> & !IN<3>;
+
+MACROCELL | 0 | 1 | EXP10_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 0 | 2
+INPUTS | 5 | MEM_DATA<7>  | MEM_DATA<6>  | regBOut<0>  | MEM_DATA<0>  | MEM_DATA<5>
+INPUTMC | 1 | 7 | 17
+INPUTP | 4 | 9 | 103 | 28 | 49
+EXPORTS | 1 | 0 | 2
+EQ | 2 | 
+       EXP10_.EXP  =  MEM_DATA<7> & !MEM_DATA<6> & regBOut<0> & 
+	!MEM_DATA<0> & !MEM_DATA<5>
+
+MACROCELL | 0 | 13 | EXP11_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 0 | 14
+INPUTS | 10 | MEM_DATA<7>  | regBOut<2>  | MEM_DATA<3>  | MEM_DATA<2>  | MEM_DATA<5>  | regBOut<3>  | alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2  | MEM_DATA<4>  | regAOut<2>  | regAOut<3>
+INPUTMC | 5 | 7 | 15 | 4 | 16 | 3 | 0 | 2 | 17 | 2 | 16
+INPUTP | 5 | 9 | 59 | 145 | 49 | 160
+EXPORTS | 1 | 0 | 14
+EQ | 14 | 
+       EXP11_.EXP  =  MEM_DATA<7> & regBOut<2> & MEM_DATA<3> & 
+	MEM_DATA<2> & !MEM_DATA<5>
+	# MEM_DATA<7> & regBOut<3> & MEM_DATA<2> & 
+	!MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# regBOut<2> & regBOut<3> & MEM_DATA<4> & 
+	!MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# !MEM_DATA<7> & regAOut<2> & regAOut<3> & 
+	!MEM_DATA<4> & !MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# !MEM_DATA<7> & regAOut<2> & !MEM_DATA<4> & 
+	MEM_DATA<3> & !MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+
+MACROCELL | 0 | 14 | EXP12_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 0 | 15
+INPUTS | 11 | MEM_DATA<3>  | MEM_DATA<2>  | alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2  | regBOut<2>  | regBOut<3>  | MEM_DATA<4>  | MEM_DATA<5>  | MEM_DATA<7>  | regAOut<2>  | IN<3>  | EXP11_.EXP
+INPUTMC | 5 | 3 | 0 | 7 | 15 | 4 | 16 | 2 | 17 | 0 | 13
+INPUTP | 6 | 59 | 145 | 160 | 49 | 9 | 69
+EXPORTS | 1 | 0 | 15
+IMPORTS | 1 | 0 | 13
+EQ | 26 | 
+       EXP12_.EXP  =  MEM_DATA<3> & MEM_DATA<2> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# regBOut<2> & regBOut<3> & MEM_DATA<4> & 
+	MEM_DATA<2> & !MEM_DATA<5>
+	# regBOut<2> & MEM_DATA<4> & MEM_DATA<3> & 
+	MEM_DATA<2> & !MEM_DATA<5>
+	# !MEM_DATA<7> & regAOut<2> & !MEM_DATA<4> & 
+	MEM_DATA<3> & MEM_DATA<2> & !MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<4> & MEM_DATA<2> & 
+	MEM_DATA<5> & IN<3> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+;Imported pterms FB1_14
+	# MEM_DATA<7> & regBOut<2> & MEM_DATA<3> & 
+	MEM_DATA<2> & !MEM_DATA<5>
+	# MEM_DATA<7> & regBOut<3> & MEM_DATA<2> & 
+	!MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# regBOut<2> & regBOut<3> & MEM_DATA<4> & 
+	!MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# !MEM_DATA<7> & regAOut<2> & regAOut<3> & 
+	!MEM_DATA<4> & !MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# !MEM_DATA<7> & regAOut<2> & !MEM_DATA<4> & 
+	MEM_DATA<3> & !MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+
+MACROCELL | 0 | 16 | EXP13_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 0 | 15
+INPUTS | 12 | MEM_DATA<7>  | regBOut<2>  | regBOut<3>  | MEM_DATA<2>  | MEM_DATA<5>  | MEM_DATA<3>  | alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2  | MEM_DATA<4>  | regAOut<3>  | IN<2>  | IN<3>  | EXP14_.EXP
+INPUTMC | 5 | 7 | 15 | 4 | 16 | 3 | 0 | 2 | 16 | 0 | 17
+INPUTP | 7 | 9 | 145 | 49 | 59 | 160 | 141 | 69
+EXPORTS | 1 | 0 | 15
+IMPORTS | 1 | 0 | 17
+EQ | 26 | 
+       EXP13_.EXP  =  MEM_DATA<7> & regBOut<2> & regBOut<3> & 
+	MEM_DATA<2> & !MEM_DATA<5>
+	# MEM_DATA<7> & regBOut<2> & MEM_DATA<3> & 
+	!MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# regBOut<3> & MEM_DATA<4> & MEM_DATA<2> & 
+	!MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# !MEM_DATA<7> & regAOut<3> & !MEM_DATA<4> & 
+	MEM_DATA<2> & !MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# !MEM_DATA<7> & !MEM_DATA<4> & MEM_DATA<5> & IN<2> & 
+	IN<3> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+;Imported pterms FB1_18
+	# MEM_DATA<7> & regBOut<3> & MEM_DATA<3> & 
+	!MEM_DATA<5>
+	# regBOut<3> & MEM_DATA<4> & MEM_DATA<3> & 
+	!MEM_DATA<5>
+	# MEM_DATA<7> & regBOut<2> & regBOut<3> & 
+	!MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# !MEM_DATA<7> & regAOut<3> & !MEM_DATA<4> & 
+	MEM_DATA<3> & !MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<4> & MEM_DATA<3> & 
+	MEM_DATA<5> & IN<3>
+
+MACROCELL | 0 | 17 | EXP14_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 0 | 16
+INPUTS | 9 | MEM_DATA<7>  | regBOut<3>  | MEM_DATA<3>  | MEM_DATA<5>  | MEM_DATA<4>  | regBOut<2>  | alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2  | regAOut<3>  | IN<3>
+INPUTMC | 4 | 4 | 16 | 7 | 15 | 3 | 0 | 2 | 16
+INPUTP | 5 | 9 | 59 | 49 | 160 | 69
+EXPORTS | 1 | 0 | 16
+EQ | 11 | 
+       EXP14_.EXP  =  MEM_DATA<7> & regBOut<3> & MEM_DATA<3> & 
+	!MEM_DATA<5>
+	# regBOut<3> & MEM_DATA<4> & MEM_DATA<3> & 
+	!MEM_DATA<5>
+	# MEM_DATA<7> & regBOut<2> & regBOut<3> & 
+	!MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# !MEM_DATA<7> & regAOut<3> & !MEM_DATA<4> & 
+	MEM_DATA<3> & !MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<4> & MEM_DATA<3> & 
+	MEM_DATA<5> & IN<3>
+
+MACROCELL | 1 | 2 | EXP15_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 1 | 3
+INPUTS | 6 | MEM_DATA<7>  | MEM_DATA<6>  | regBOut<0>  | MEM_DATA<0>  | carryOut  | MEM_DATA<5>
+INPUTMC | 2 | 7 | 17 | 0 | 15
+INPUTP | 4 | 9 | 103 | 28 | 49
+EXPORTS | 1 | 1 | 3
+EQ | 4 | 
+       EXP15_.EXP  =  MEM_DATA<7> & MEM_DATA<6> & !regBOut<0> & 
+	MEM_DATA<0> & !carryOut
+	# MEM_DATA<7> & MEM_DATA<6> & MEM_DATA<0> & 
+	!carryOut & MEM_DATA<5>
+
+MACROCELL | 1 | 4 | EXP16_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 1 | 3
+INPUTS | 7 | MEM_DATA<7>  | MEM_DATA<6>  | regBOut<0>  | MEM_DATA<4>  | MEM_DATA<0>  | MEM_DATA<5>  | carryOut
+INPUTMC | 2 | 7 | 17 | 0 | 15
+INPUTP | 5 | 9 | 103 | 160 | 28 | 49
+EXPORTS | 1 | 1 | 3
+EQ | 4 | 
+       EXP16_.EXP  =  MEM_DATA<7> & MEM_DATA<6> & regBOut<0> & 
+	MEM_DATA<4> & !MEM_DATA<0> & !MEM_DATA<5>
+	# MEM_DATA<7> & MEM_DATA<6> & regBOut<0> & 
+	!MEM_DATA<0> & !carryOut & !MEM_DATA<5>
+
+MACROCELL | 2 | 1 | EXP17_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 2 | 2
+INPUTS | 5 | MEM_DATA<7>  | MEM_DATA<6>  | MEM_ADDR<2>  | carryOut  | $OpTx$FX_DC$26
+INPUTMC | 3 | 2 | 2 | 0 | 15 | 6 | 0
+INPUTP | 2 | 9 | 103
+EXPORTS | 1 | 2 | 2
+EQ | 2 | 
+       EXP17_.EXP  =  MEM_DATA<7> & MEM_DATA<6> & MEM_ADDR<2> & 
+	!carryOut & !$OpTx$FX_DC$26
+
+MACROCELL | 2 | 3 | EXP18_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 2 | 2
+INPUTS | 5 | MEM_DATA<7>  | MEM_DATA<6>  | MEM_ADDR<2>  | MEM_DATA<4>  | $OpTx$FX_DC$26
+INPUTMC | 2 | 2 | 2 | 6 | 0
+INPUTP | 3 | 9 | 103 | 160
+EXPORTS | 1 | 2 | 2
+EQ | 2 | 
+       EXP18_.EXP  =  MEM_DATA<7> & MEM_DATA<6> & MEM_ADDR<2> & 
+	MEM_DATA<4> & !$OpTx$FX_DC$26
+
+MACROCELL | 2 | 8 | EXP19_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 2 | 9
+INPUTS | 5 | MEM_DATA<7>  | MEM_DATA<6>  | MEM_ADDR<3>  | carryOut  | $OpTx$FX_DC$27
+INPUTMC | 3 | 2 | 9 | 0 | 15 | 6 | 17
+INPUTP | 2 | 9 | 103
+EXPORTS | 1 | 2 | 9
+EQ | 2 | 
+       EXP19_.EXP  =  MEM_DATA<7> & MEM_DATA<6> & MEM_ADDR<3> & 
+	!carryOut & !$OpTx$FX_DC$27
+
+MACROCELL | 2 | 10 | EXP20_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 2 | 9
+INPUTS | 5 | MEM_DATA<7>  | MEM_DATA<6>  | MEM_ADDR<3>  | MEM_DATA<4>  | $OpTx$FX_DC$27
+INPUTMC | 2 | 2 | 9 | 6 | 17
+INPUTP | 3 | 9 | 103 | 160
+EXPORTS | 1 | 2 | 9
+EQ | 2 | 
+       EXP20_.EXP  =  MEM_DATA<7> & MEM_DATA<6> & MEM_ADDR<3> & 
+	MEM_DATA<4> & !$OpTx$FX_DC$27
+
+MACROCELL | 3 | 1 | EXP21_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 3 | 0
+INPUTS | 7 | MEM_DATA<7>  | MEM_DATA<4>  | MEM_DATA<0>  | MEM_DATA<1>  | MEM_DATA<5>  | IN<0>  | IN<1>
+INPUTP | 7 | 9 | 160 | 28 | 90 | 49 | 102 | 125
+EXPORTS | 1 | 3 | 0
+EQ | 4 | 
+       EXP21_.EXP  =  !MEM_DATA<7> & !MEM_DATA<4> & MEM_DATA<0> & 
+	MEM_DATA<1> & MEM_DATA<5> & IN<0>
+	# !MEM_DATA<7> & !MEM_DATA<4> & MEM_DATA<0> & 
+	MEM_DATA<5> & IN<0> & IN<1>
+
+MACROCELL | 3 | 2 | EXP22_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 3 | 3
+INPUTS | 9 | MEM_DATA<7>  | MEM_DATA<6>  | regBOut<0>  | regBOut<1>  | carryOut  | MEM_DATA<1>  | MEM_DATA<5>  | MEM_DATA<4>  | MEM_DATA<0>
+INPUTMC | 3 | 7 | 17 | 3 | 9 | 0 | 15
+INPUTP | 6 | 9 | 103 | 90 | 49 | 160 | 28
+EXPORTS | 1 | 3 | 3
+EQ | 6 | 
+       EXP22_.EXP  =  MEM_DATA<7> & MEM_DATA<6> & !regBOut<0> & 
+	regBOut<1> & !carryOut & !MEM_DATA<1> & !MEM_DATA<5>
+	# MEM_DATA<7> & MEM_DATA<6> & regBOut<1> & 
+	MEM_DATA<4> & !MEM_DATA<0> & !MEM_DATA<1> & !MEM_DATA<5>
+	# MEM_DATA<7> & MEM_DATA<6> & regBOut<1> & 
+	!MEM_DATA<0> & !carryOut & !MEM_DATA<1> & !MEM_DATA<5>
+
+MACROCELL | 3 | 3 | EXP23_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 3 | 4
+INPUTS | 9 | MEM_DATA<6>  | MEM_ADDR<0>  | MEM_ADDR<1>  | MEM_DATA<4>  | carryOut  | MEM_DATA<7>  | MEM_DATA<1>  | MEM_DATA<5>  | EXP22_.EXP
+INPUTMC | 4 | 1 | 3 | 3 | 4 | 0 | 15 | 3 | 2
+INPUTP | 5 | 103 | 160 | 9 | 90 | 49
+EXPORTS | 1 | 3 | 4
+IMPORTS | 1 | 3 | 2
+EQ | 16 | 
+       EXP23_.EXP  =  !MEM_DATA<6> & MEM_ADDR<0> & !MEM_ADDR<1>
+	# MEM_ADDR<0> & !MEM_ADDR<1> & !MEM_DATA<4> & 
+	carryOut
+	# !MEM_ADDR<0> & MEM_ADDR<1> & !MEM_DATA<4> & 
+	carryOut
+	# MEM_DATA<7> & MEM_DATA<6> & MEM_DATA<4> & 
+	MEM_DATA<1> & MEM_DATA<5>
+	# MEM_DATA<7> & MEM_DATA<6> & !carryOut & 
+	MEM_DATA<1> & MEM_DATA<5>
+;Imported pterms FB4_3
+	# MEM_DATA<7> & MEM_DATA<6> & !regBOut<0> & 
+	regBOut<1> & !carryOut & !MEM_DATA<1> & !MEM_DATA<5>
+	# MEM_DATA<7> & MEM_DATA<6> & regBOut<1> & 
+	MEM_DATA<4> & !MEM_DATA<0> & !MEM_DATA<1> & !MEM_DATA<5>
+	# MEM_DATA<7> & MEM_DATA<6> & regBOut<1> & 
+	!MEM_DATA<0> & !carryOut & !MEM_DATA<1> & !MEM_DATA<5>
+
+MACROCELL | 3 | 5 | EXP24_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 3 | 4
+INPUTS | 10 | MEM_DATA<7>  | MEM_DATA<6>  | regBOut<0>  | regBOut<1>  | MEM_DATA<4>  | MEM_DATA<1>  | carryOut  | MEM_DATA<0>  | MEM_DATA<5>  | EXP25_.EXP
+INPUTMC | 4 | 7 | 17 | 3 | 9 | 0 | 15 | 3 | 6
+INPUTP | 6 | 9 | 103 | 160 | 90 | 28 | 49
+EXPORTS | 1 | 3 | 4
+IMPORTS | 1 | 3 | 6
+EQ | 17 | 
+       EXP24_.EXP  =  MEM_DATA<7> & MEM_DATA<6> & !regBOut<0> & 
+	!regBOut<1> & MEM_DATA<4> & MEM_DATA<1>
+	# MEM_DATA<7> & MEM_DATA<6> & !regBOut<0> & 
+	!regBOut<1> & !carryOut & MEM_DATA<1>
+	# MEM_DATA<7> & MEM_DATA<6> & !regBOut<1> & 
+	MEM_DATA<4> & !MEM_DATA<0> & MEM_DATA<1>
+	# MEM_DATA<7> & MEM_DATA<6> & !regBOut<1> & 
+	!MEM_DATA<0> & !carryOut & MEM_DATA<1>
+	# MEM_DATA<7> & MEM_DATA<6> & !regBOut<0> & 
+	regBOut<1> & MEM_DATA<4> & !MEM_DATA<1> & !MEM_DATA<5>
+;Imported pterms FB4_7
+	# MEM_DATA<7> & MEM_DATA<6> & regBOut<0> & 
+	!regBOut<1> & MEM_DATA<4> & MEM_DATA<0> & !MEM_DATA<1> & 
+	!MEM_DATA<5>
+	# MEM_DATA<7> & MEM_DATA<6> & regBOut<0> & 
+	!regBOut<1> & MEM_DATA<0> & !carryOut & !MEM_DATA<1> & 
+	!MEM_DATA<5>
+
+MACROCELL | 3 | 6 | EXP25_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 3 | 5
+INPUTS | 9 | MEM_DATA<7>  | MEM_DATA<6>  | regBOut<0>  | regBOut<1>  | MEM_DATA<4>  | MEM_DATA<0>  | MEM_DATA<1>  | MEM_DATA<5>  | carryOut
+INPUTMC | 3 | 7 | 17 | 3 | 9 | 0 | 15
+INPUTP | 6 | 9 | 103 | 160 | 28 | 90 | 49
+EXPORTS | 1 | 3 | 5
+EQ | 6 | 
+       EXP25_.EXP  =  MEM_DATA<7> & MEM_DATA<6> & regBOut<0> & 
+	!regBOut<1> & MEM_DATA<4> & MEM_DATA<0> & !MEM_DATA<1> & 
+	!MEM_DATA<5>
+	# MEM_DATA<7> & MEM_DATA<6> & regBOut<0> & 
+	!regBOut<1> & MEM_DATA<0> & !carryOut & !MEM_DATA<1> & 
+	!MEM_DATA<5>
+
+MACROCELL | 3 | 7 | EXP26_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 3 | 8
+INPUTS | 10 | MEM_DATA<7>  | MEM_DATA<6>  | MEM_DATA<0>  | MEM_DATA<1>  | MEM_DATA<5>  | IN<1>  | regAOut<0>  | regAOut<1>  | MEM_DATA<4>  | IN<0>
+INPUTMC | 2 | 7 | 1 | 3 | 14
+INPUTP | 8 | 9 | 103 | 28 | 90 | 49 | 125 | 160 | 102
+EXPORTS | 1 | 3 | 8
+EQ | 10 | 
+       EXP26_.EXP  =  !MEM_DATA<7> & MEM_DATA<6> & !MEM_DATA<0> & 
+	MEM_DATA<1> & MEM_DATA<5> & !IN<1>
+	# !MEM_DATA<7> & MEM_DATA<6> & !regAOut<0> & 
+	regAOut<1> & !MEM_DATA<4> & !MEM_DATA<1> & !MEM_DATA<5>
+	# !MEM_DATA<7> & MEM_DATA<6> & !regAOut<1> & 
+	!MEM_DATA<4> & !MEM_DATA<0> & MEM_DATA<1> & !MEM_DATA<5>
+	# !MEM_DATA<7> & MEM_DATA<6> & !MEM_DATA<4> & 
+	!MEM_DATA<0> & !MEM_DATA<1> & MEM_DATA<5> & IN<1>
+	# !MEM_DATA<7> & MEM_DATA<6> & !MEM_DATA<4> & 
+	!MEM_DATA<1> & MEM_DATA<5> & !IN<0> & IN<1>
+
+MACROCELL | 3 | 8 | EXP27_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 3 | 9
+INPUTS | 11 | MEM_DATA<7>  | regBOut<0>  | regBOut<1>  | MEM_DATA<6>  | MEM_DATA<4>  | MEM_DATA<0>  | MEM_DATA<1>  | MEM_DATA<5>  | regAOut<0>  | regAOut<1>  | EXP26_.EXP
+INPUTMC | 5 | 7 | 17 | 3 | 9 | 7 | 1 | 3 | 14 | 3 | 7
+INPUTP | 6 | 9 | 103 | 160 | 28 | 90 | 49
+EXPORTS | 1 | 3 | 9
+IMPORTS | 1 | 3 | 7
+EQ | 20 | 
+       EXP27_.EXP  =  MEM_DATA<7> & regBOut<0> & !regBOut<1>
+	# !MEM_DATA<6> & regBOut<0> & !regBOut<1>
+	# regBOut<0> & !regBOut<1> & MEM_DATA<4> & 
+	MEM_DATA<0> & !MEM_DATA<1> & !MEM_DATA<5>
+	# !MEM_DATA<7> & MEM_DATA<6> & regBOut<0> & 
+	regBOut<1> & MEM_DATA<4> & MEM_DATA<0> & MEM_DATA<1>
+	# !MEM_DATA<7> & MEM_DATA<6> & regAOut<0> & 
+	regAOut<1> & !MEM_DATA<4> & MEM_DATA<0> & MEM_DATA<1> & 
+	!MEM_DATA<5>
+;Imported pterms FB4_8
+	# !MEM_DATA<7> & MEM_DATA<6> & !MEM_DATA<0> & 
+	MEM_DATA<1> & MEM_DATA<5> & !IN<1>
+	# !MEM_DATA<7> & MEM_DATA<6> & !regAOut<0> & 
+	regAOut<1> & !MEM_DATA<4> & !MEM_DATA<1> & !MEM_DATA<5>
+	# !MEM_DATA<7> & MEM_DATA<6> & !regAOut<1> & 
+	!MEM_DATA<4> & !MEM_DATA<0> & MEM_DATA<1> & !MEM_DATA<5>
+	# !MEM_DATA<7> & MEM_DATA<6> & !MEM_DATA<4> & 
+	!MEM_DATA<0> & !MEM_DATA<1> & MEM_DATA<5> & IN<1>
+	# !MEM_DATA<7> & MEM_DATA<6> & !MEM_DATA<4> & 
+	!MEM_DATA<1> & MEM_DATA<5> & !IN<0> & IN<1>
+
+MACROCELL | 3 | 10 | EXP28_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 3 | 9
+INPUTS | 10 | MEM_DATA<7>  | regBOut<0>  | regBOut<1>  | MEM_DATA<6>  | MEM_DATA<4>  | MEM_DATA<1>  | MEM_DATA<5>  | IN<0>  | IN<1>  | EXP29_.EXP
+INPUTMC | 3 | 7 | 17 | 3 | 9 | 3 | 11
+INPUTP | 7 | 9 | 103 | 160 | 90 | 49 | 102 | 125
+EXPORTS | 1 | 3 | 9
+IMPORTS | 1 | 3 | 11
+EQ | 18 | 
+       EXP28_.EXP  =  MEM_DATA<7> & !regBOut<0> & regBOut<1>
+	# !MEM_DATA<6> & !regBOut<0> & regBOut<1>
+	# !MEM_DATA<7> & MEM_DATA<6> & MEM_DATA<4> & 
+	MEM_DATA<1> & MEM_DATA<5>
+	# !MEM_DATA<7> & MEM_DATA<6> & !regBOut<0> & 
+	!regBOut<1> & MEM_DATA<4> & MEM_DATA<1>
+	# !MEM_DATA<7> & MEM_DATA<6> & MEM_DATA<1> & 
+	MEM_DATA<5> & !IN<0> & !IN<1>
+;Imported pterms FB4_12
+	# !MEM_DATA<7> & MEM_DATA<6> & regAOut<1> & 
+	!MEM_DATA<4> & !MEM_DATA<0> & !MEM_DATA<1> & !MEM_DATA<5>
+	# !MEM_DATA<7> & MEM_DATA<6> & regBOut<1> & 
+	MEM_DATA<4> & !MEM_DATA<0> & !MEM_DATA<1> & !MEM_DATA<5>
+	# !MEM_DATA<7> & MEM_DATA<6> & regAOut<0> & 
+	!regAOut<1> & !MEM_DATA<4> & MEM_DATA<0> & !MEM_DATA<1> & 
+	!MEM_DATA<5>
+	# !MEM_DATA<7> & MEM_DATA<6> & !MEM_DATA<4> & 
+	MEM_DATA<0> & !MEM_DATA<1> & MEM_DATA<5> & IN<0> & !IN<1>
+
+MACROCELL | 3 | 11 | EXP29_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 3 | 10
+INPUTS | 11 | MEM_DATA<7>  | MEM_DATA<6>  | regAOut<1>  | MEM_DATA<4>  | MEM_DATA<0>  | MEM_DATA<1>  | MEM_DATA<5>  | regBOut<1>  | regAOut<0>  | IN<0>  | IN<1>
+INPUTMC | 3 | 3 | 14 | 3 | 9 | 7 | 1
+INPUTP | 8 | 9 | 103 | 160 | 28 | 90 | 49 | 102 | 125
+EXPORTS | 1 | 3 | 10
+EQ | 9 | 
+       EXP29_.EXP  =  !MEM_DATA<7> & MEM_DATA<6> & regAOut<1> & 
+	!MEM_DATA<4> & !MEM_DATA<0> & !MEM_DATA<1> & !MEM_DATA<5>
+	# !MEM_DATA<7> & MEM_DATA<6> & regBOut<1> & 
+	MEM_DATA<4> & !MEM_DATA<0> & !MEM_DATA<1> & !MEM_DATA<5>
+	# !MEM_DATA<7> & MEM_DATA<6> & regAOut<0> & 
+	!regAOut<1> & !MEM_DATA<4> & MEM_DATA<0> & !MEM_DATA<1> & 
+	!MEM_DATA<5>
+	# !MEM_DATA<7> & MEM_DATA<6> & !MEM_DATA<4> & 
+	MEM_DATA<0> & !MEM_DATA<1> & MEM_DATA<5> & IN<0> & !IN<1>
+
+MACROCELL | 3 | 12 | EXP30_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 3 | 13
+INPUTS | 12 | MEM_DATA<7>  | MEM_DATA<6>  | regAOut<0>  | regAOut<1>  | MEM_DATA<4>  | MEM_DATA<1>  | MEM_DATA<5>  | regBOut<0>  | regBOut<1>  | MEM_DATA<0>  | IN<1>  | IN<0>
+INPUTMC | 4 | 7 | 1 | 3 | 14 | 7 | 17 | 3 | 9
+INPUTP | 8 | 9 | 103 | 160 | 90 | 49 | 28 | 125 | 102
+EXPORTS | 1 | 3 | 13
+EQ | 10 | 
+       EXP30_.EXP  =  !MEM_DATA<7> & !MEM_DATA<6> & !regAOut<0> & 
+	!regAOut<1> & !MEM_DATA<4> & MEM_DATA<1> & !MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<6> & !regBOut<0> & 
+	regBOut<1> & MEM_DATA<4> & !MEM_DATA<1> & !MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<6> & regAOut<1> & 
+	!MEM_DATA<4> & !MEM_DATA<0> & !MEM_DATA<1> & !MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<6> & !MEM_DATA<4> & 
+	!MEM_DATA<0> & !MEM_DATA<1> & MEM_DATA<5> & IN<1>
+	# !MEM_DATA<7> & !MEM_DATA<6> & !MEM_DATA<4> & 
+	!MEM_DATA<1> & MEM_DATA<5> & !IN<0> & IN<1>
+
+MACROCELL | 3 | 13 | EXP31_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 3 | 14
+INPUTS | 11 | MEM_DATA<7>  | regAOut<0>  | regAOut<1>  | MEM_DATA<6>  | MEM_DATA<1>  | MEM_DATA<5>  | IN<0>  | IN<1>  | MEM_DATA<4>  | MEM_DATA<0>  | EXP30_.EXP
+INPUTMC | 3 | 7 | 1 | 3 | 14 | 3 | 12
+INPUTP | 8 | 9 | 103 | 90 | 49 | 102 | 125 | 160 | 28
+EXPORTS | 1 | 3 | 14
+IMPORTS | 1 | 3 | 12
+EQ | 19 | 
+       EXP31_.EXP  =  MEM_DATA<7> & regAOut<0> & !regAOut<1>
+	# MEM_DATA<6> & regAOut<0> & !regAOut<1>
+	# !MEM_DATA<7> & !MEM_DATA<6> & MEM_DATA<1> & 
+	MEM_DATA<5> & !IN<0> & !IN<1>
+	# regAOut<0> & !regAOut<1> & !MEM_DATA<4> & 
+	MEM_DATA<0> & !MEM_DATA<1> & !MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<6> & MEM_DATA<0> & 
+	MEM_DATA<1> & MEM_DATA<5> & IN<0> & IN<1>
+;Imported pterms FB4_13
+	# !MEM_DATA<7> & !MEM_DATA<6> & !regAOut<0> & 
+	!regAOut<1> & !MEM_DATA<4> & MEM_DATA<1> & !MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<6> & !regBOut<0> & 
+	regBOut<1> & MEM_DATA<4> & !MEM_DATA<1> & !MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<6> & regAOut<1> & 
+	!MEM_DATA<4> & !MEM_DATA<0> & !MEM_DATA<1> & !MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<6> & !MEM_DATA<4> & 
+	!MEM_DATA<0> & !MEM_DATA<1> & MEM_DATA<5> & IN<1>
+	# !MEM_DATA<7> & !MEM_DATA<6> & !MEM_DATA<4> & 
+	!MEM_DATA<1> & MEM_DATA<5> & !IN<0> & IN<1>
+
+MACROCELL | 3 | 15 | EXP32_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 3 | 14
+INPUTS | 11 | MEM_DATA<7>  | regAOut<0>  | regAOut<1>  | MEM_DATA<6>  | MEM_DATA<4>  | MEM_DATA<1>  | MEM_DATA<5>  | regBOut<1>  | MEM_DATA<0>  | IN<1>  | EXP33_.EXP
+INPUTMC | 4 | 7 | 1 | 3 | 14 | 3 | 9 | 3 | 16
+INPUTP | 7 | 9 | 103 | 160 | 90 | 49 | 28 | 125
+EXPORTS | 1 | 3 | 14
+IMPORTS | 1 | 3 | 16
+EQ | 19 | 
+       EXP32_.EXP  =  MEM_DATA<7> & !regAOut<0> & regAOut<1>
+	# MEM_DATA<6> & !regAOut<0> & regAOut<1>
+	# !MEM_DATA<7> & !MEM_DATA<6> & MEM_DATA<4> & 
+	MEM_DATA<1> & MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<6> & !regBOut<1> & 
+	MEM_DATA<4> & !MEM_DATA<0> & MEM_DATA<1>
+	# !MEM_DATA<7> & !MEM_DATA<6> & !MEM_DATA<0> & 
+	MEM_DATA<1> & MEM_DATA<5> & !IN<1>
+;Imported pterms FB4_17
+	# !MEM_DATA<7> & !MEM_DATA<6> & regBOut<1> & 
+	MEM_DATA<4> & !MEM_DATA<0> & !MEM_DATA<1> & !MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<6> & regAOut<0> & 
+	regAOut<1> & !MEM_DATA<4> & MEM_DATA<0> & MEM_DATA<1> & 
+	!MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<6> & regBOut<0> & 
+	!regBOut<1> & MEM_DATA<4> & MEM_DATA<0> & !MEM_DATA<1> & 
+	!MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<6> & !MEM_DATA<4> & 
+	MEM_DATA<0> & !MEM_DATA<1> & MEM_DATA<5> & IN<0> & !IN<1>
+
+MACROCELL | 3 | 16 | EXP33_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 3 | 15
+INPUTS | 12 | MEM_DATA<7>  | MEM_DATA<6>  | regBOut<1>  | MEM_DATA<4>  | MEM_DATA<0>  | MEM_DATA<1>  | MEM_DATA<5>  | regAOut<0>  | regAOut<1>  | regBOut<0>  | IN<0>  | IN<1>
+INPUTMC | 4 | 3 | 9 | 7 | 1 | 3 | 14 | 7 | 17
+INPUTP | 8 | 9 | 103 | 160 | 28 | 90 | 49 | 102 | 125
+EXPORTS | 1 | 3 | 15
+EQ | 10 | 
+       EXP33_.EXP  =  !MEM_DATA<7> & !MEM_DATA<6> & regBOut<1> & 
+	MEM_DATA<4> & !MEM_DATA<0> & !MEM_DATA<1> & !MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<6> & regAOut<0> & 
+	regAOut<1> & !MEM_DATA<4> & MEM_DATA<0> & MEM_DATA<1> & 
+	!MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<6> & regBOut<0> & 
+	!regBOut<1> & MEM_DATA<4> & MEM_DATA<0> & !MEM_DATA<1> & 
+	!MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<6> & !MEM_DATA<4> & 
+	MEM_DATA<0> & !MEM_DATA<1> & MEM_DATA<5> & IN<0> & !IN<1>
+
+MACROCELL | 3 | 17 | EXP34_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 3 | 0
+INPUTS | 9 | MEM_DATA<7>  | regBOut<0>  | regBOut<1>  | MEM_DATA<0>  | MEM_DATA<5>  | MEM_DATA<1>  | MEM_DATA<4>  | regAOut<0>  | regAOut<1>
+INPUTMC | 4 | 7 | 17 | 3 | 9 | 7 | 1 | 3 | 14
+INPUTP | 5 | 9 | 28 | 49 | 90 | 160
+EXPORTS | 1 | 3 | 0
+EQ | 10 | 
+       EXP34_.EXP  =  MEM_DATA<7> & regBOut<0> & regBOut<1> & 
+	MEM_DATA<0> & !MEM_DATA<5>
+	# MEM_DATA<7> & regBOut<0> & MEM_DATA<0> & 
+	MEM_DATA<1> & !MEM_DATA<5>
+	# regBOut<0> & regBOut<1> & MEM_DATA<4> & 
+	MEM_DATA<0> & !MEM_DATA<5>
+	# !MEM_DATA<7> & regAOut<0> & regAOut<1> & 
+	!MEM_DATA<4> & MEM_DATA<0> & !MEM_DATA<5>
+	# !MEM_DATA<7> & regAOut<0> & !MEM_DATA<4> & 
+	MEM_DATA<0> & MEM_DATA<1> & !MEM_DATA<5>
+
+MACROCELL | 4 | 1 | EXP35_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 4 | 2
+INPUTS | 9 | OUT<0>  | OUT<1>  | MEM_DATA<6>  | MEM_DATA<7>  | MEM_DATA<1>  | MEM_DATA<5>  | regBOut<0>  | regBOut<1>  | MEM_DATA<0>
+INPUTMC | 4 | 0 | 2 | 4 | 2 | 7 | 17 | 3 | 9
+INPUTP | 5 | 103 | 9 | 90 | 49 | 28
+EXPORTS | 1 | 4 | 2
+EQ | 7 | 
+       EXP35_.EXP  =  OUT<0> & !OUT<1> & MEM_DATA<6>
+	# MEM_DATA<7> & !MEM_DATA<6> & MEM_DATA<1> & 
+	MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<0> & 
+	!regBOut<1> & MEM_DATA<1>
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<1> & 
+	!MEM_DATA<0> & MEM_DATA<1>
+
+MACROCELL | 4 | 3 | EXP36_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 4 | 2
+INPUTS | 7 | MEM_DATA<7>  | MEM_DATA<6>  | regBOut<0>  | regBOut<1>  | MEM_DATA<1>  | MEM_DATA<5>  | MEM_DATA<0>
+INPUTMC | 2 | 7 | 17 | 3 | 9
+INPUTP | 5 | 9 | 103 | 90 | 49 | 28
+EXPORTS | 1 | 4 | 2
+EQ | 6 | 
+       EXP36_.EXP  =  MEM_DATA<7> & !MEM_DATA<6> & !regBOut<0> & 
+	regBOut<1> & !MEM_DATA<1> & !MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<1> & 
+	!MEM_DATA<0> & !MEM_DATA<1> & !MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<0> & 
+	!regBOut<1> & MEM_DATA<0> & !MEM_DATA<1> & !MEM_DATA<5>
+
+MACROCELL | 4 | 17 | EXP37_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 4 | 0
+INPUTS | 6 | MEM_DATA<7>  | regBOut<3>  | MEM_DATA<3>  | MEM_DATA<5>  | MEM_DATA<4>  | IN<3>
+INPUTMC | 1 | 4 | 16
+INPUTP | 5 | 9 | 59 | 49 | 160 | 69
+EXPORTS | 1 | 4 | 0
+EQ | 5 | 
+       EXP37_.EXP  =  MEM_DATA<7> & !regBOut<3> & MEM_DATA<3>
+	# MEM_DATA<7> & MEM_DATA<3> & MEM_DATA<5>
+	# !regBOut<3> & MEM_DATA<4> & MEM_DATA<3>
+	# MEM_DATA<4> & MEM_DATA<3> & MEM_DATA<5>
+	# MEM_DATA<3> & MEM_DATA<5> & !IN<3>
+
+MACROCELL | 6 | 1 | EXP38_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 6 | 0
+INPUTS | 6 | MEM_DATA<7>  | regBOut<2>  | MEM_DATA<2>  | MEM_DATA<5>  | MEM_DATA<4>  | IN<2>
+INPUTMC | 1 | 7 | 15
+INPUTP | 5 | 9 | 145 | 49 | 160 | 141
+EXPORTS | 1 | 6 | 0
+EQ | 5 | 
+       EXP38_.EXP  =  MEM_DATA<7> & !regBOut<2> & MEM_DATA<2>
+	# MEM_DATA<7> & MEM_DATA<2> & MEM_DATA<5>
+	# !regBOut<2> & MEM_DATA<4> & MEM_DATA<2>
+	# MEM_DATA<4> & MEM_DATA<2> & MEM_DATA<5>
+	# MEM_DATA<2> & MEM_DATA<5> & !IN<2>
+
+MACROCELL | 6 | 2 | EXP39_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 6 | 3
+INPUTS | 8 | MEM_DATA<7>  | MEM_DATA<6>  | regBOut<3>  | MEM_DATA<3>  | MEM_DATA<2>  | alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2  | regBOut<2>  | MEM_DATA<5>
+INPUTMC | 3 | 4 | 16 | 3 | 0 | 7 | 15
+INPUTP | 5 | 9 | 103 | 59 | 145 | 49
+EXPORTS | 1 | 6 | 3
+EQ | 14 | 
+       EXP39_.EXP  =  MEM_DATA<7> & !MEM_DATA<6> & !regBOut<3> & 
+	!MEM_DATA<3> & MEM_DATA<2> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<2> & 
+	regBOut<3> & MEM_DATA<3> & MEM_DATA<2> & !MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<2> & 
+	regBOut<3> & MEM_DATA<3> & !MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<3> & 
+	MEM_DATA<3> & MEM_DATA<2> & !MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<3> & 
+	!MEM_DATA<3> & !MEM_DATA<2> & !MEM_DATA<5> & 
+	!alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+
+MACROCELL | 6 | 3 | EXP40_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 6 | 4
+INPUTS | 11 | OUT<2>  | OUT<3>  | MEM_DATA<7>  | MEM_DATA<6>  | OUT<0>  | OUT<1>  | MEM_DATA<3>  | MEM_DATA<2>  | MEM_DATA<5>  | alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2  | EXP39_.EXP
+INPUTMC | 6 | 7 | 3 | 6 | 4 | 0 | 2 | 4 | 2 | 3 | 0 | 6 | 2
+INPUTP | 5 | 9 | 103 | 59 | 145 | 49
+EXPORTS | 1 | 6 | 4
+IMPORTS | 1 | 6 | 2
+EQ | 24 | 
+       EXP40_.EXP  =  !OUT<2> & OUT<3> & !MEM_DATA<7>
+	# !OUT<2> & OUT<3> & MEM_DATA<6>
+	# OUT<0> & OUT<1> & OUT<2> & !OUT<3> & 
+	!MEM_DATA<7>
+	# MEM_DATA<7> & !MEM_DATA<6> & MEM_DATA<3> & 
+	!MEM_DATA<2> & MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & MEM_DATA<3> & 
+	MEM_DATA<5> & 
+	!alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+;Imported pterms FB7_3
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<3> & 
+	!MEM_DATA<3> & MEM_DATA<2> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<2> & 
+	regBOut<3> & MEM_DATA<3> & MEM_DATA<2> & !MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<2> & 
+	regBOut<3> & MEM_DATA<3> & !MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<3> & 
+	MEM_DATA<3> & MEM_DATA<2> & !MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<3> & 
+	!MEM_DATA<3> & !MEM_DATA<2> & !MEM_DATA<5> & 
+	!alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+
+MACROCELL | 6 | 5 | EXP41_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 6 | 4
+INPUTS | 13 | OUT<0>  | OUT<1>  | OUT<2>  | OUT<3>  | MEM_DATA<6>  | MEM_DATA<7>  | regBOut<2>  | regBOut<3>  | MEM_DATA<3>  | MEM_DATA<2>  | alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2  | MEM_DATA<5>  | EXP42_.EXP
+INPUTMC | 8 | 0 | 2 | 4 | 2 | 7 | 3 | 6 | 4 | 7 | 15 | 4 | 16 | 3 | 0 | 6 | 6
+INPUTP | 5 | 103 | 9 | 59 | 145 | 49
+EXPORTS | 1 | 6 | 4
+IMPORTS | 1 | 6 | 6
+EQ | 24 | 
+       EXP41_.EXP  =  OUT<0> & OUT<1> & OUT<2> & !OUT<3> & 
+	MEM_DATA<6>
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<2> & 
+	!regBOut<3> & MEM_DATA<3> & !MEM_DATA<2>
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<2> & 
+	!regBOut<3> & MEM_DATA<3> & 
+	!alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<3> & 
+	MEM_DATA<3> & !MEM_DATA<2> & 
+	!alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# MEM_DATA<7> & !MEM_DATA<6> & !MEM_DATA<3> & 
+	MEM_DATA<2> & MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+;Imported pterms FB7_7
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<2> & 
+	!regBOut<3> & !MEM_DATA<3> & MEM_DATA<2> & !MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<2> & 
+	!regBOut<3> & !MEM_DATA<3> & !MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<2> & 
+	regBOut<3> & !MEM_DATA<3> & !MEM_DATA<2> & !MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<2> & 
+	regBOut<3> & !MEM_DATA<3> & !MEM_DATA<5> & 
+	!alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+
+MACROCELL | 6 | 6 | EXP42_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 6 | 5
+INPUTS | 8 | MEM_DATA<7>  | MEM_DATA<6>  | regBOut<2>  | regBOut<3>  | MEM_DATA<3>  | MEM_DATA<2>  | MEM_DATA<5>  | alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+INPUTMC | 3 | 7 | 15 | 4 | 16 | 3 | 0
+INPUTP | 5 | 9 | 103 | 59 | 145 | 49
+EXPORTS | 1 | 6 | 5
+EQ | 10 | 
+       EXP42_.EXP  =  MEM_DATA<7> & !MEM_DATA<6> & regBOut<2> & 
+	!regBOut<3> & !MEM_DATA<3> & MEM_DATA<2> & !MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<2> & 
+	!regBOut<3> & !MEM_DATA<3> & !MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<2> & 
+	regBOut<3> & !MEM_DATA<3> & !MEM_DATA<2> & !MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<2> & 
+	regBOut<3> & !MEM_DATA<3> & !MEM_DATA<5> & 
+	!alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+
+MACROCELL | 6 | 15 | EXP43_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 6 | 16
+INPUTS | 5 | MEM_DATA<7>  | MEM_DATA<4>  | MEM_DATA<5>  | IN<2>  | alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+INPUTMC | 1 | 3 | 0
+INPUTP | 4 | 9 | 160 | 49 | 141
+EXPORTS | 1 | 6 | 16
+EQ | 2 | 
+       EXP43_.EXP  =  !MEM_DATA<7> & !MEM_DATA<4> & MEM_DATA<5> & IN<2> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+
+MACROCELL | 6 | 16 | EXP44_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 6 | 17
+INPUTS | 9 | MEM_DATA<7>  | regBOut<2>  | MEM_DATA<2>  | MEM_DATA<5>  | alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2  | regAOut<2>  | MEM_DATA<4>  | IN<2>  | EXP43_.EXP
+INPUTMC | 4 | 7 | 15 | 3 | 0 | 2 | 17 | 6 | 15
+INPUTP | 5 | 9 | 145 | 49 | 160 | 141
+EXPORTS | 1 | 6 | 17
+IMPORTS | 1 | 6 | 15
+EQ | 14 | 
+       EXP44_.EXP  =  MEM_DATA<7> & regBOut<2> & MEM_DATA<2> & 
+	!MEM_DATA<5>
+	# MEM_DATA<7> & regBOut<2> & !MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# !MEM_DATA<7> & regAOut<2> & !MEM_DATA<4> & 
+	MEM_DATA<2> & !MEM_DATA<5>
+	# !MEM_DATA<7> & regAOut<2> & !MEM_DATA<4> & 
+	!MEM_DATA<5> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+	# !MEM_DATA<7> & !MEM_DATA<4> & MEM_DATA<2> & 
+	MEM_DATA<5> & IN<2>
+;Imported pterms FB7_16
+	# !MEM_DATA<7> & !MEM_DATA<4> & MEM_DATA<5> & IN<2> & 
+	alu/Madd_AUX_6_addsub0000__or0000/alu/Madd_AUX_6_addsub0000__or0000_D2
+
+MACROCELL | 7 | 0 | EXP45_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 7 | 1
+INPUTS | 8 | MEM_DATA<6>  | regAOut<0>  | MEM_DATA<7>  | regBOut<0>  | MEM_DATA<4>  | MEM_DATA<0>  | MEM_DATA<5>  | IN<0>
+INPUTMC | 2 | 7 | 1 | 7 | 17
+INPUTP | 6 | 103 | 9 | 160 | 28 | 49 | 102
+EXPORTS | 1 | 7 | 1
+EQ | 9 | 
+       EXP45_.EXP  =  MEM_DATA<6> & !regAOut<0>
+	# !MEM_DATA<7> & !MEM_DATA<6> & !regBOut<0> & 
+	MEM_DATA<4> & MEM_DATA<0>
+	# !MEM_DATA<7> & !MEM_DATA<6> & MEM_DATA<4> & 
+	MEM_DATA<0> & MEM_DATA<5>
+	# !MEM_DATA<7> & !MEM_DATA<6> & MEM_DATA<0> & 
+	MEM_DATA<5> & !IN<0>
+	# !MEM_DATA<7> & !MEM_DATA<6> & regAOut<0> & 
+	!MEM_DATA<4> & !MEM_DATA<0> & !MEM_DATA<5>
+
+MACROCELL | 7 | 2 | EXP46_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 7 | 3
+INPUTS | 7 | OUT<0>  | OUT<2>  | MEM_DATA<6>  | OUT<1>  | MEM_DATA<7>  | MEM_DATA<2>  | MEM_DATA<5>
+INPUTMC | 3 | 0 | 2 | 7 | 3 | 4 | 2
+INPUTP | 4 | 103 | 9 | 145 | 49
+EXPORTS | 1 | 7 | 3
+EQ | 6 | 
+       EXP46_.EXP  =  !OUT<0> & OUT<2> & MEM_DATA<6>
+	# !OUT<1> & OUT<2> & !MEM_DATA<7>
+	# !OUT<1> & OUT<2> & MEM_DATA<6>
+	# OUT<0> & OUT<1> & !OUT<2> & !MEM_DATA<7>
+	# MEM_DATA<7> & !MEM_DATA<6> & MEM_DATA<2> & 
+	MEM_DATA<5>
+
+MACROCELL | 7 | 4 | EXP47_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 7 | 3
+INPUTS | 12 | OUT<0>  | OUT<1>  | OUT<2>  | MEM_DATA<6>  | MEM_DATA<7>  | regBOut<0>  | regBOut<1>  | regBOut<2>  | MEM_DATA<2>  | MEM_DATA<1>  | MEM_DATA<0>  | EXP48_.EXP
+INPUTMC | 7 | 0 | 2 | 4 | 2 | 7 | 3 | 7 | 17 | 3 | 9 | 7 | 15 | 7 | 5
+INPUTP | 5 | 103 | 9 | 145 | 90 | 28
+EXPORTS | 1 | 7 | 3
+IMPORTS | 1 | 7 | 5
+EQ | 31 | 
+       EXP47_.EXP  =  OUT<0> & OUT<1> & !OUT<2> & MEM_DATA<6>
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<0> & 
+	!regBOut<1> & !regBOut<2> & MEM_DATA<2>
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<0> & 
+	!regBOut<2> & !MEM_DATA<1> & MEM_DATA<2>
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<1> & 
+	!regBOut<2> & !MEM_DATA<0> & MEM_DATA<2>
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<1> & 
+	!regBOut<2> & !MEM_DATA<1> & MEM_DATA<2>
+;Imported pterms FB8_6
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<2> & 
+	!MEM_DATA<0> & !MEM_DATA<1> & MEM_DATA<2>
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<0> & 
+	!regBOut<1> & regBOut<2> & !MEM_DATA<2> & !MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<0> & 
+	regBOut<2> & !MEM_DATA<1> & !MEM_DATA<2> & !MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<1> & 
+	regBOut<2> & !MEM_DATA<0> & !MEM_DATA<2> & !MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<1> & 
+	regBOut<2> & !MEM_DATA<1> & !MEM_DATA<2> & !MEM_DATA<5>
+;Imported pterms FB8_7
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<1> & 
+	!regBOut<2> & MEM_DATA<1> & !MEM_DATA<2> & !MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<2> & 
+	!MEM_DATA<0> & !MEM_DATA<1> & !MEM_DATA<2> & !MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<0> & 
+	regBOut<1> & !regBOut<2> & MEM_DATA<0> & !MEM_DATA<2> & 
+	!MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<0> & 
+	!regBOut<2> & MEM_DATA<0> & MEM_DATA<1> & !MEM_DATA<2> & 
+	!MEM_DATA<5>
+
+MACROCELL | 7 | 5 | EXP48_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 7 | 4
+INPUTS | 10 | MEM_DATA<7>  | MEM_DATA<6>  | regBOut<2>  | MEM_DATA<0>  | MEM_DATA<1>  | MEM_DATA<2>  | regBOut<0>  | regBOut<1>  | MEM_DATA<5>  | EXP49_.EXP
+INPUTMC | 4 | 7 | 15 | 7 | 17 | 3 | 9 | 7 | 6
+INPUTP | 6 | 9 | 103 | 28 | 90 | 145 | 49
+EXPORTS | 1 | 7 | 4
+IMPORTS | 1 | 7 | 6
+EQ | 21 | 
+       EXP48_.EXP  =  MEM_DATA<7> & !MEM_DATA<6> & !regBOut<2> & 
+	!MEM_DATA<0> & !MEM_DATA<1> & MEM_DATA<2>
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<0> & 
+	!regBOut<1> & regBOut<2> & !MEM_DATA<2> & !MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<0> & 
+	regBOut<2> & !MEM_DATA<1> & !MEM_DATA<2> & !MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<1> & 
+	regBOut<2> & !MEM_DATA<0> & !MEM_DATA<2> & !MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & !regBOut<1> & 
+	regBOut<2> & !MEM_DATA<1> & !MEM_DATA<2> & !MEM_DATA<5>
+;Imported pterms FB8_7
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<1> & 
+	!regBOut<2> & MEM_DATA<1> & !MEM_DATA<2> & !MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<2> & 
+	!MEM_DATA<0> & !MEM_DATA<1> & !MEM_DATA<2> & !MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<0> & 
+	regBOut<1> & !regBOut<2> & MEM_DATA<0> & !MEM_DATA<2> & 
+	!MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<0> & 
+	!regBOut<2> & MEM_DATA<0> & MEM_DATA<1> & !MEM_DATA<2> & 
+	!MEM_DATA<5>
+
+MACROCELL | 7 | 6 | EXP49_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 7 | 5
+INPUTS | 9 | MEM_DATA<7>  | MEM_DATA<6>  | regBOut<1>  | regBOut<2>  | MEM_DATA<1>  | MEM_DATA<2>  | MEM_DATA<5>  | MEM_DATA<0>  | regBOut<0>
+INPUTMC | 3 | 3 | 9 | 7 | 15 | 7 | 17
+INPUTP | 6 | 9 | 103 | 90 | 145 | 49 | 28
+EXPORTS | 1 | 7 | 5
+EQ | 10 | 
+       EXP49_.EXP  =  MEM_DATA<7> & !MEM_DATA<6> & regBOut<1> & 
+	!regBOut<2> & MEM_DATA<1> & !MEM_DATA<2> & !MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<2> & 
+	!MEM_DATA<0> & !MEM_DATA<1> & !MEM_DATA<2> & !MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<0> & 
+	regBOut<1> & !regBOut<2> & MEM_DATA<0> & !MEM_DATA<2> & 
+	!MEM_DATA<5>
+	# MEM_DATA<7> & !MEM_DATA<6> & regBOut<0> & 
+	!regBOut<2> & MEM_DATA<0> & MEM_DATA<1> & !MEM_DATA<2> & 
+	!MEM_DATA<5>
+
+MACROCELL | 7 | 16 | EXP50_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 7 | 17
+INPUTS | 8 | MEM_DATA<7>  | MEM_DATA<6>  | MEM_DATA<4>  | MEM_DATA<0>  | MEM_DATA<5>  | IN<0>  | regAOut<0>  | regBOut<0>
+INPUTMC | 2 | 7 | 1 | 7 | 17
+INPUTP | 6 | 9 | 103 | 160 | 28 | 49 | 102
+EXPORTS | 1 | 7 | 17
+EQ | 10 | 
+       EXP50_.EXP  =  !MEM_DATA<7> & MEM_DATA<6> & MEM_DATA<4> & 
+	MEM_DATA<0> & MEM_DATA<5>
+	# !MEM_DATA<7> & MEM_DATA<6> & MEM_DATA<0> & 
+	MEM_DATA<5> & !IN<0>
+	# !MEM_DATA<7> & MEM_DATA<6> & !regAOut<0> & 
+	!MEM_DATA<4> & MEM_DATA<0> & !MEM_DATA<5>
+	# !MEM_DATA<7> & MEM_DATA<6> & regBOut<0> & 
+	MEM_DATA<4> & !MEM_DATA<0> & !MEM_DATA<5>
+	# !MEM_DATA<7> & MEM_DATA<6> & !MEM_DATA<4> & 
+	!MEM_DATA<0> & MEM_DATA<5> & IN<0>
+
+PIN | CLK | 4096 | 0 | N/A | 33 | 17 | 0 | 2 | 4 | 2 | 7 | 3 | 6 | 4 | 7 | 1 | 7 | 17 | 3 | 14 | 2 | 17 | 3 | 9 | 7 | 15 | 2 | 16 | 4 | 16 | 1 | 3 | 3 | 4 | 2 | 2 | 2 | 9 | 0 | 15
+PIN | MEM_DATA<7> | 64 | 0 | N/A | 9 | 62 | 0 | 2 | 4 | 2 | 7 | 3 | 6 | 4 | 7 | 1 | 7 | 17 | 3 | 14 | 2 | 17 | 3 | 9 | 7 | 15 | 2 | 16 | 4 | 16 | 1 | 3 | 3 | 4 | 2 | 2 | 2 | 9 | 0 | 15 | 3 | 0 | 6 | 0 | 6 | 16 | 4 | 0 | 0 | 1 | 0 | 13 | 0 | 14 | 0 | 16 | 0 | 17 | 1 | 2 | 1 | 4 | 2 | 1 | 2 | 3 | 2 | 8 | 2 | 10 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 5 | 3 | 6 | 3 | 7 | 3 | 8 | 3 | 10 | 3 | 11 | 3 | 12 | 3 | 13 | 3 | 15 | 3 | 16 | 3 | 17 | 4 | 1 | 4 | 3 | 4 | 17 | 6 | 1 | 6 | 2 | 6 | 3 | 6 | 5 | 6 | 6 | 6 | 15 | 6 | 17 | 7 | 0 | 7 | 2 | 7 | 4 | 7 | 5 | 7 | 6 | 7 | 16
+PIN | MEM_DATA<6> | 64 | 0 | N/A | 103 | 47 | 0 | 2 | 4 | 2 | 7 | 3 | 6 | 4 | 7 | 1 | 7 | 17 | 3 | 14 | 2 | 17 | 3 | 9 | 7 | 15 | 2 | 16 | 4 | 16 | 1 | 3 | 3 | 4 | 2 | 2 | 2 | 9 | 0 | 1 | 1 | 2 | 1 | 4 | 2 | 1 | 2 | 3 | 2 | 8 | 2 | 10 | 3 | 2 | 3 | 3 | 3 | 5 | 3 | 6 | 3 | 7 | 3 | 8 | 3 | 10 | 3 | 11 | 3 | 12 | 3 | 13 | 3 | 15 | 3 | 16 | 4 | 1 | 4 | 3 | 6 | 2 | 6 | 3 | 6 | 5 | 6 | 6 | 7 | 0 | 7 | 2 | 7 | 4 | 7 | 5 | 7 | 6 | 7 | 16
+PIN | MEM_DATA<5> | 64 | 0 | N/A | 49 | 47 | 0 | 2 | 4 | 1 | 7 | 2 | 6 | 3 | 7 | 1 | 7 | 17 | 3 | 14 | 3 | 9 | 1 | 3 | 3 | 3 | 0 | 15 | 3 | 0 | 6 | 0 | 6 | 17 | 4 | 0 | 0 | 1 | 0 | 13 | 0 | 14 | 0 | 16 | 0 | 17 | 1 | 2 | 1 | 4 | 3 | 1 | 3 | 2 | 3 | 5 | 3 | 6 | 3 | 7 | 3 | 8 | 3 | 10 | 3 | 11 | 3 | 12 | 3 | 13 | 3 | 15 | 3 | 16 | 3 | 17 | 4 | 3 | 4 | 17 | 6 | 1 | 6 | 2 | 6 | 5 | 6 | 6 | 6 | 15 | 6 | 16 | 7 | 0 | 7 | 5 | 7 | 6 | 7 | 16
+PIN | MEM_DATA<0> | 64 | 0 | N/A | 28 | 32 | 0 | 2 | 4 | 2 | 7 | 3 | 7 | 1 | 7 | 17 | 3 | 14 | 3 | 9 | 1 | 3 | 3 | 4 | 3 | 0 | 0 | 1 | 1 | 2 | 1 | 4 | 3 | 1 | 3 | 2 | 3 | 5 | 3 | 6 | 3 | 7 | 3 | 8 | 3 | 11 | 3 | 12 | 3 | 13 | 3 | 15 | 3 | 16 | 3 | 17 | 4 | 1 | 4 | 3 | 7 | 0 | 7 | 4 | 7 | 5 | 7 | 6 | 7 | 16
+PIN | MEM_DATA<1> | 64 | 0 | N/A | 90 | 25 | 4 | 2 | 7 | 3 | 3 | 14 | 3 | 9 | 3 | 4 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 5 | 3 | 6 | 3 | 7 | 3 | 8 | 3 | 10 | 3 | 11 | 3 | 12 | 3 | 13 | 3 | 15 | 3 | 16 | 3 | 17 | 4 | 1 | 4 | 3 | 7 | 4 | 7 | 5 | 7 | 6
+PIN | MEM_DATA<2> | 64 | 0 | N/A | 145 | 17 | 7 | 3 | 6 | 3 | 0 | 15 | 6 | 0 | 6 | 17 | 0 | 13 | 0 | 14 | 0 | 16 | 6 | 1 | 6 | 2 | 6 | 5 | 6 | 6 | 6 | 16 | 7 | 2 | 7 | 4 | 7 | 5 | 7 | 6
+PIN | MEM_DATA<3> | 64 | 0 | N/A | 59 | 11 | 6 | 3 | 0 | 15 | 4 | 0 | 0 | 13 | 0 | 14 | 0 | 16 | 0 | 17 | 4 | 17 | 6 | 2 | 6 | 5 | 6 | 6
+PIN | MEM_DATA<4> | 64 | 0 | N/A | 160 | 40 | 7 | 1 | 7 | 17 | 3 | 14 | 3 | 9 | 1 | 3 | 3 | 4 | 2 | 2 | 2 | 9 | 0 | 15 | 3 | 0 | 6 | 0 | 6 | 17 | 4 | 0 | 0 | 13 | 0 | 14 | 0 | 16 | 0 | 17 | 1 | 4 | 2 | 3 | 2 | 10 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 5 | 3 | 6 | 3 | 7 | 3 | 8 | 3 | 10 | 3 | 11 | 3 | 12 | 3 | 13 | 3 | 15 | 3 | 16 | 3 | 17 | 4 | 17 | 6 | 1 | 6 | 15 | 6 | 16 | 7 | 0 | 7 | 16
+PIN | IN<0> | 64 | 0 | N/A | 102 | 11 | 7 | 1 | 7 | 16 | 3 | 13 | 3 | 9 | 3 | 1 | 3 | 7 | 3 | 10 | 3 | 11 | 3 | 12 | 3 | 16 | 7 | 0
+PIN | IN<1> | 64 | 0 | N/A | 125 | 10 | 3 | 13 | 3 | 9 | 3 | 0 | 3 | 1 | 3 | 7 | 3 | 10 | 3 | 11 | 3 | 12 | 3 | 15 | 3 | 16
+PIN | IN<2> | 64 | 0 | N/A | 141 | 6 | 0 | 15 | 6 | 0 | 6 | 16 | 0 | 16 | 6 | 1 | 6 | 15
+PIN | IN<3> | 64 | 0 | N/A | 69 | 6 | 0 | 15 | 4 | 0 | 0 | 14 | 0 | 16 | 0 | 17 | 4 | 17
+PIN | OUT<0> | 536871040 | 0 | N/A | 19
+PIN | OUT<1> | 536871040 | 0 | N/A | 66
+PIN | OUT<2> | 536871040 | 0 | N/A | 108
+PIN | OUT<3> | 536871040 | 0 | N/A | 82
+PIN | MEM_ADDR<0> | 536871040 | 0 | N/A | 5
+PIN | MEM_ADDR<1> | 536871040 | 0 | N/A | 143
+PIN | MEM_ADDR<2> | 536871040 | 0 | N/A | 45
+PIN | MEM_ADDR<3> | 536871040 | 0 | N/A | 52
